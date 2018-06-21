@@ -1,0 +1,94 @@
+[
+    {
+        "id": "365d7b8f-e0e1-4f9e-9bee-4f5a8d04969a",
+        "timestamp": "2018-06-19T22:56:18.932Z",
+        "lang": "en",
+        "result": {
+            "source": "agent",
+            "resolvedQuery": "\n  Hi, I’m wondering if this is still available?",
+            "contexts": [],
+            "metadata": {},
+            "fulfillment": {
+                "speech": ""
+            },
+            "score": 0
+        },
+        "status": {
+            "code": 200,
+            "errorType": "success"
+        },
+        "sessionId": "PLACEHOLDER_SESSION_ID"
+    },
+    {
+        "id": "c3850fa2-0120-4c1e-b780-f018d5f5bcbb",
+        "timestamp": "2018-06-19T22:56:18.928Z",
+        "lang": "en",
+        "result": {
+            "source": "agent",
+            "resolvedQuery": "\n  I have a group of 3 guys from WLU, looking to rent for 8 months if possible.",
+            "contexts": [],
+            "metadata": {},
+            "fulfillment": {
+                "speech": ""
+            },
+            "score": 0
+        },
+        "status": {
+            "code": 200,
+            "errorType": "success"
+        },
+        "sessionId": "PLACEHOLDER_SESSION_ID"
+    },
+    {
+        "id": "676792fd-bbed-443e-97c3-dd22befd88ef",
+        "timestamp": "2018-06-19T22:56:18.899Z",
+        "lang": "en",
+        "result": {
+            "source": "agent",
+            "resolvedQuery": "\n  Also are pets allowed?",
+            "contexts": [],
+            "metadata": {},
+            "fulfillment": {
+                "speech": ""
+            },
+            "score": 0
+        },
+        "status": {
+            "code": 200,
+            "errorType": "success"
+        },
+        "sessionId": "PLACEHOLDER_SESSION_ID"
+    },
+    {
+        "id": "d794b85a-c6d1-4aa7-b67b-74aa023a2951",
+        "timestamp": "2018-06-19T22:56:18.875Z",
+        "lang": "en",
+        "result": {
+            "source": "domains",
+            "resolvedQuery": " Thanks!",
+            "action": "smalltalk.appraisal.thank_you",
+            "actionIncomplete": false,
+            "parameters": {},
+            "contexts": [],
+            "metadata": {
+                "webhookResponseTime": 151
+            },
+            "fulfillment": {
+                "speech": "Anytime. That's what I'm here for.",
+                "messages": [
+                    {
+                        "type": 0,
+                        "speech": "It's my pleasure to help."
+                    }
+                ]
+            },
+            "score": 1
+        },
+        "status": {
+            "code": 206,
+            "errorType": "partial_content",
+            "errorDetails": "Webhook call failed. Error: 404 Not Found"
+        },
+        "sessionId": "PLACEHOLDER_SESSION_ID"
+    }
+]
