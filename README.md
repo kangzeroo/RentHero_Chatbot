@@ -12,4 +12,10 @@ The steps for using it are as follows:
 <br />
 
 ## Notes
-- You will need to modify `creds/development/dialogflow_config.js` & `creds/staging/development/dialogflow_config_staging.js` credentials file with the correct keys.
+- You will need to add `creds/development/dialogflow_config.js` & `creds/staging/development/dialogflow_config_staging.js` credential files with the correct keys.
+```javascript
+const CLIENT_ACCESS_KEY = 'COPY_PASTE_KEY'
+const DEVELOPER_ACCESS_KEY = 'COPY_PASTE_KEY'
+
+module.exports = { CLIENT_ACCESS_KEY, DEVELOPER_ACCESS_KEY }
+```
