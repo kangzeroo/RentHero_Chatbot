@@ -1,5 +1,7 @@
-# Jakecarios McBar
-This script is for playing around with DialogFlow. The steps for using it are as follows:
+# RentHero_Chatbot
+Chatbot AI for responding to rental inquiries, pre/post processing of data, ML pipeline and general infrastructure endpoints.
+
+The steps for using it are as follows:
 
 0. Install dependencies with `npm install`
 1. Copy and paste your email into `input/text.js`
@@ -10,5 +12,4 @@ This script is for playing around with DialogFlow. The steps for using it are as
 <br />
 
 ## Notes
-- This script can be improved by going into `server.js` and modifying the `preprocess()` function <br />
-- You will need a `creds/development/dialogflow_config.js` credentials file
+- You will need to modify `creds/development/dialogflow_config.js` & 'creds/staging/d'credentials file
