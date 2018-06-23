@@ -20,7 +20,7 @@ const DEVELOPER_ACCESS_KEY = 'COPY_PASTE_KEY'
 module.exports = { CLIENT_ACCESS_KEY, DEVELOPER_ACCESS_KEY }
 ```
 
-*5 Secondary research training data sets for general emails to be formated*
+*5 Secondary research training data sets for general emails (To be formated)*
 1. https://www.kaggle.com/wcukierski/enron-email-dataset
 2. http://linkedmarkmail.wikier.org/
 3. http://www.edrm.net/resources/data-sets/edrm-internationalization-data-set/
