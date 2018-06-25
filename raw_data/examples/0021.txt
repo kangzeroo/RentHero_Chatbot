@@ -1,0 +1,16 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+I'm a Laurier student seeking a single room for myself, are any of these rooms still available? Please let me know.
+
+---LANDLORD---
+
+Hi Christina
+Yes I have just 3 rooms available.
+If you'd like to schedule a tour
+Tomorrow afternoon or Saturday afternoon.
+Thank you

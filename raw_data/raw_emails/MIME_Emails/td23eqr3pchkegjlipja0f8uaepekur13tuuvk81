@@ -1,0 +1,252 @@
+Return-Path: <huang.khan74@gmail.com>
+Received: from mail-oi0-f50.google.com (mail-oi0-f50.google.com [209.85.218.50])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id td23eqr3pchkegjlipja0f8uaepekur13tuuvk81
+ for test@myrenthelper.com;
+ Wed, 20 Jun 2018 20:09:59 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of _spf.google.com designates 209.85.218.50 as permitted sender) client-ip=209.85.218.50; envelope-from=huang.khan74@gmail.com; helo=mail-oi0-f50.google.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of _spf.google.com designates 209.85.218.50 as permitted sender) client-ip=209.85.218.50; envelope-from=huang.khan74@gmail.com; helo=mail-oi0-f50.google.com;
+ dkim=pass header.i=@gmail.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFFRXB5N1dYQWtvSEZpKzdvQS9PSDlNWkcwUlNSdDVWNzhPaWhkZ2EyL0I4bUlaMlRTeDZXd0RzcGc2TU44QzZmVG4rT0d6R3hXaHJxdW95YVVheU5IR2xZYmR4NXdWZkV4SWs5RHRBQmEzdDBnanVxODNyNENUa2dGYTA2Ulo1VlNYeTVxS1l4dHJma3FKVEtZdmt0cytobnBMRDJMam4xRnVKelN2UzRvZGQvcExhVU5jazdpTENaZENNa3RDaVZ6azZvNDdoNlZFZm9pNy9HK3BBaXpSZUhsMFQxdExIOWJWVVlGOFB4eFk2M0tZU3dIdjI4MktnVWJYYmtTR3BFVU5HREp1ZUVHTHVLblZUS1l3d2hRZEtDU3lqZU5ncGF3bEExWVhRMzBrbEE9PQ==
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=S2nDrxzF3gS4rRGchIdGeIKeY0tQI/GqQd1eslqvrJ1KxcvqkNQ7OMzMIpSW7I1SMAX1bA6TlpCbi+hQ4P6ZpqP58kIadUnuIEICYBXOM/Pwocl/99B1E4dc3EeKbffq97E310CO0jmVLpMzdTTbHQnR71H4tOmTLpl6fJetlQ8=; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1529525399; v=1; bh=Mgsqs1sQPqasSCUv8x2/fOI3y59FGreWd7H4y/5tskc=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-oi0-f50.google.com with SMTP id h79-v6so741798oig.13
+        for <test@myrenthelper.com>; Wed, 20 Jun 2018 13:09:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=Mgsqs1sQPqasSCUv8x2/fOI3y59FGreWd7H4y/5tskc=;
+        b=NGqA5zsmLIPRC01ODq1la7lV9hbne6JcDCwX7JGlT0kWuG1dlFLdhcrNGgQlUS15rL
+         EEl5Z4byhyBt8kTGggCMAb5Zi8pF4b0ISAAudbu8vmKnCdf5RqBOgQTR/fc7hOnFYxjC
+         8uePW9ZtXS5uBIlyVxJAXnBG5B6lGSq9rxLY1Tq3Bbsr1O2pzbqiIzgpCtYaeFitpx26
+         elHBZrMZWiAvaMsky45QwRoAocc1ipM9K+Y+/RF0Of6QsrSIZgT2zo07PrMB9xnmjxql
+         QqrS+SsP6b1EKMx4qgRWStSX/cyX//lZ9Bf2/fmIMTft61P++CujdW1dSwETBLXyTm+a
+         XNaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=Mgsqs1sQPqasSCUv8x2/fOI3y59FGreWd7H4y/5tskc=;
+        b=nxCIMQJqvcPtnuGU5EjPa4zUtmZnw5jDSxULUCwfsGMEiYyPblqHRbIRg9HdAx2nMl
+         tB0Iq7x1KFUALOMKzmtJxlUpY3tqjHLO3Y/CBMgoDGExT5PC7afg4wb51/OV4AxbGvl+
+         R98TNlr/lzelHPs2e1NfGRJGtdYGrJX5LNjaX5b1jcqtwSzK/wPE1zJCkUOQXw/GsZ44
+         UhQ87J1yhKC7OBDINlgR4nQiEl5XMMVvQQgBs484faGlTCRkRp7MpZ6OhtCKf+uaQnfI
+         aWa6Qe9wc4lY8YiOK6/8KZf79X2PywL35bziO10wfJNckgfX3NAuywHfkUSGVbFL7oL1
+         tDTg==
+X-Gm-Message-State: APt69E3iRZUeeunosux5KxFPEElJeSWG+4RXaHqtEYywAk2YkxttmCQj
+	WUYJalI1WfB9nXdJoU6pHslA2jouKoufPOs23vg=
+X-Google-Smtp-Source: ADUXVKICIXiRomvyD4iYjHiPL8cXnLKZsn6Ls96I0T78U/euC0FQazogiEM2nMACU70sO8nMGR0cOv2Fzv60AlVgIuA=
+X-Received: by 2002:aca:584:: with SMTP id 126-v6mr13198350oif.23.1529525398256;
+ Wed, 20 Jun 2018 13:09:58 -0700 (PDT)
+MIME-Version: 1.0
+References: <YQBPR0101MB1745108ED283CAF73B07F78DF8700@YQBPR0101MB1745.CANPRD01.PROD.OUTLOOK.COM>
+ <CAKZk_OD3L-LeW=m_LhfUqzVqHiT7vTwqgDK+TfkK-9h+As9yyA@mail.gmail.com>
+ <YTOPR0101MB17542D0454D153777F133923F8770@YTOPR0101MB1754.CANPRD01.PROD.OUTLOOK.COM>
+ <CAKZk_OCaRE64ZFOuxh3-EX2LxevuqazC2XBncT+5dfTgOPQVkw@mail.gmail.com>
+ <YTOPR0101MB1754B4ACB7A9A16879D7B0B2F8770@YTOPR0101MB1754.CANPRD01.PROD.OUTLOOK.COM>
+ <CAKZk_OAHoH9LLqCACFBD9TXTUn_jO8gkUgoLvD1xSXpbbgvWmw@mail.gmail.com> <YTOPR0101MB1754F134DEECC819977B4F2EF8770@YTOPR0101MB1754.CANPRD01.PROD.OUTLOOK.COM>
+In-Reply-To: <YTOPR0101MB1754F134DEECC819977B4F2EF8770@YTOPR0101MB1754.CANPRD01.PROD.OUTLOOK.COM>
+From: Khan Huang <huang.khan74@gmail.com>
+Date: Wed, 20 Jun 2018 16:09:47 -0400
+Message-ID: <CAKZk_OALL27-M5ZoxmVyHJEvS+YbuE+N7Cx_C7F+n7Sg-LcXBA@mail.gmail.com>
+Subject: Fwd: Test Email Thread
+To: test@myrenthelper.com
+Content-Type: multipart/alternative; boundary="00000000000009c169056f18624e"
+
+--00000000000009c169056f18624e
+Content-Type: text/plain; charset="UTF-8"
+
+---------- Forwarded message ---------
+From: Kangze Huang <k35huang@edu.uwaterloo.ca>
+Date: Wed, Jun 20, 2018 at 11:18 AM
+Subject: Re: Test Email Thread
+To: Khan Huang <huang.khan74@gmail.com>
+
+
+I can move in whenever, I just have a preference for January. I am
+currently living at my parents house. When could I take a tour?
+------------------------------
+*From:* Khan Huang <huang.khan74@gmail.com>
+*Sent:* Wednesday, June 20, 2018 11:18:01 AM
+*To:* Kangze Huang
+*Subject:* Re: Test Email Thread
+
+Yes we have one bedrooms but they are rented out very fast. I assume you
+cannot move in September?
+
+On Wed, Jun 20, 2018, 11:17 AM Kangze Huang <k35huang@edu.uwaterloo.ca>
+wrote:
+
+Ok thank you! Do you have any 1 bedrooms for under $2000?
+------------------------------
+*From:* Khan Huang <huang.khan74@gmail.com>
+*Sent:* Wednesday, June 20, 2018 11:16:43 AM
+*To:* Kangze Huang
+*Subject:* Re: Test Email Thread
+
+I don't think so.
+
+On Wed, Jun 20, 2018, 11:16 AM Kangze Huang <k35huang@edu.uwaterloo.ca>
+wrote:
+
+Hi,
+
+
+I am looking to move in sometime around January 2019. Is it too early for
+me to start looking for places?
+
+
+Best Regards,
+
+Kahn
+------------------------------
+*From:* Khan Huang <huang.khan74@gmail.com>
+*Sent:* Wednesday, June 20, 2018 11:15:46 AM
+*To:* Kangze Huang
+*Subject:* Re: Test Email Thread
+
+Hello, yes there are room availabilities. When are you looking to move in?
+
+On Tue, Jun 19, 2018, 7:33 PM Kangze Huang <k35huang@edu.uwaterloo.ca>
+wrote:
+
+Hello there, this is a test email thread. You feel me?
+
+--00000000000009c169056f18624e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr">------=
+---- Forwarded message ---------<br>From: <strong class=3D"gmail_sendername=
+" dir=3D"auto">Kangze Huang</strong> <span dir=3D"ltr">&lt;<a href=3D"mailt=
+o:k35huang@edu.uwaterloo.ca">k35huang@edu.uwaterloo.ca</a>&gt;</span><br>Da=
+te: Wed, Jun 20, 2018 at 11:18 AM<br>Subject: Re: Test Email Thread<br>To: =
+Khan Huang &lt;<a href=3D"mailto:huang.khan74@gmail.com">huang.khan74@gmail=
+.com</a>&gt;<br></div><br><br>
+
+
+
+
+<div dir=3D"ltr">
+<div id=3D"m_-1099721069439300488divtagdefaultwrapper" style=3D"font-size:1=
+2pt;color:#000000;font-family:Calibri,Helvetica,sans-serif" dir=3D"ltr">
+<p style=3D"margin-top:0;margin-bottom:0">I can move in whenever, I just ha=
+ve a preference for January. I am currently living at my parents house. Whe=
+n could I take a tour?=C2=A0</p>
+</div>
+<hr style=3D"display:inline-block;width:98%">
+<div id=3D"m_-1099721069439300488divRplyFwdMsg" dir=3D"ltr"><font face=3D"C=
+alibri, sans-serif" style=3D"font-size:11pt" color=3D"#000000"><b>From:</b>=
+ Khan Huang &lt;<a href=3D"mailto:huang.khan74@gmail.com" target=3D"_blank"=
+>huang.khan74@gmail.com</a>&gt;<br>
+<b>Sent:</b> Wednesday, June 20, 2018 11:18:01 AM<br>
+<b>To:</b> Kangze Huang<br>
+<b>Subject:</b> Re: Test Email Thread</font>
+<div>=C2=A0</div>
+</div>
+
+<div>
+<div dir=3D"auto">Yes we have one bedrooms but they are rented out very fas=
+t. I assume you cannot move in September?</div>
+<br>
+<div class=3D"m_-1099721069439300488x_gmail_quote">
+<div dir=3D"ltr">On Wed, Jun 20, 2018, 11:17 AM Kangze Huang &lt;<a href=3D=
+"mailto:k35huang@edu.uwaterloo.ca" target=3D"_blank">k35huang@edu.uwaterloo=
+.ca</a>&gt; wrote:<br>
+</div>
+<blockquote class=3D"m_-1099721069439300488x_gmail_quote" style=3D"margin:0=
+ 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+<div dir=3D"ltr">
+<div id=3D"m_-1099721069439300488x_m_4808993227553658050divtagdefaultwrappe=
+r" dir=3D"ltr" style=3D"font-size:12pt;color:#000000;font-family:Calibri,He=
+lvetica,sans-serif">
+<p style=3D"margin-top:0;margin-bottom:0">Ok thank you! Do you have any 1 b=
+edrooms for under $2000?</p>
+</div>
+<hr style=3D"display:inline-block;width:98%">
+<div id=3D"m_-1099721069439300488x_m_4808993227553658050divRplyFwdMsg" dir=
+=3D"ltr"><font face=3D"Calibri, sans-serif" color=3D"#000000" style=3D"font=
+-size:11pt"><b>From:</b> Khan Huang &lt;<a href=3D"mailto:huang.khan74@gmai=
+l.com" rel=3D"noreferrer" target=3D"_blank">huang.khan74@gmail.com</a>&gt;<=
+br>
+<b>Sent:</b> Wednesday, June 20, 2018 11:16:43 AM<br>
+<b>To:</b> Kangze Huang<br>
+<b>Subject:</b> Re: Test Email Thread</font>
+<div>=C2=A0</div>
+</div>
+<div>
+<div dir=3D"auto">I don&#39;t think so.=C2=A0</div>
+<br>
+<div class=3D"m_-1099721069439300488x_m_4808993227553658050x_gmail_quote">
+<div dir=3D"ltr">On Wed, Jun 20, 2018, 11:16 AM Kangze Huang &lt;<a href=3D=
+"mailto:k35huang@edu.uwaterloo.ca" rel=3D"noreferrer" target=3D"_blank">k35=
+huang@edu.uwaterloo.ca</a>&gt; wrote:<br>
+</div>
+<blockquote class=3D"m_-1099721069439300488x_m_4808993227553658050x_gmail_q=
+uote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1e=
+x">
+<div dir=3D"ltr">
+<div id=3D"m_-1099721069439300488x_m_4808993227553658050x_m_-30217670595230=
+13197divtagdefaultwrapper" dir=3D"ltr" style=3D"font-size:12pt;color:#00000=
+0;font-family:Calibri,Helvetica,sans-serif">
+<p style=3D"margin-top:0;margin-bottom:0">Hi,</p>
+<p style=3D"margin-top:0;margin-bottom:0"><br>
+</p>
+<p style=3D"margin-top:0;margin-bottom:0">I am looking to move in sometime =
+around January 2019. Is it too early for me to start looking for places?</p=
+>
+<p style=3D"margin-top:0;margin-bottom:0"><br>
+</p>
+<p style=3D"margin-top:0;margin-bottom:0">Best Regards,</p>
+<p style=3D"margin-top:0;margin-bottom:0">Kahn</p>
+</div>
+<hr style=3D"display:inline-block;width:98%">
+<div id=3D"m_-1099721069439300488x_m_4808993227553658050x_m_-30217670595230=
+13197divRplyFwdMsg" dir=3D"ltr">
+<font face=3D"Calibri, sans-serif" color=3D"#000000" style=3D"font-size:11p=
+t"><b>From:</b> Khan Huang &lt;<a href=3D"mailto:huang.khan74@gmail.com" re=
+l=3D"noreferrer noreferrer" target=3D"_blank">huang.khan74@gmail.com</a>&gt=
+;<br>
+<b>Sent:</b> Wednesday, June 20, 2018 11:15:46 AM<br>
+<b>To:</b> Kangze Huang<br>
+<b>Subject:</b> Re: Test Email Thread</font>
+<div>=C2=A0</div>
+</div>
+<div>
+<div dir=3D"auto">Hello, yes there are room availabilities. When are you lo=
+oking to move in?</div>
+<br>
+<div class=3D"m_-1099721069439300488x_m_4808993227553658050x_m_-30217670595=
+23013197x_gmail_quote">
+<div dir=3D"ltr">On Tue, Jun 19, 2018, 7:33 PM Kangze Huang &lt;<a href=3D"=
+mailto:k35huang@edu.uwaterloo.ca" rel=3D"noreferrer noreferrer" target=3D"_=
+blank">k35huang@edu.uwaterloo.ca</a>&gt; wrote:<br>
+</div>
+<blockquote class=3D"m_-1099721069439300488x_m_4808993227553658050x_m_-3021=
+767059523013197x_gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #c=
+cc solid;padding-left:1ex">
+<div dir=3D"ltr">
+<div id=3D"m_-1099721069439300488x_m_4808993227553658050x_m_-30217670595230=
+13197x_m_-3947276991712941196divtagdefaultwrapper" dir=3D"ltr" style=3D"fon=
+t-size:12pt;color:#000000;font-family:Calibri,Helvetica,sans-serif">
+<p style=3D"margin-top:0;margin-bottom:0">Hello there, this is a test email=
+ thread. You feel me?</p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+
+</div></div>
+
+--00000000000009c169056f18624e--

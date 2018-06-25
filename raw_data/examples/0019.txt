@@ -1,0 +1,36 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I'm interested. Please contact me if this is still available.
+
+---LANDLORD---
+
+Hi Emily
+Yes this is still available.
+Thank you
+Jody
+
+---TENANT---
+
+Yes I am! After 5:15pm!
+
+---LANDLORD---
+
+Ok perfect see you there at 5:30 tomorrow
+Thank you
+Jody
+
+---TENANT---
+
+I'm going to most likely be In my work uniform, which is booster juice.
+So you know who I am! My number is 5194975164 as well!
+
+---LANDLORD---
+
+Ok🙂
+Thank you for the heads up!
+Jody

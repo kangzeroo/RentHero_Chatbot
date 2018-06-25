@@ -1,0 +1,62 @@
+Return-Path: <admin@renthero.com>
+Received: from mail-lf0-f51.google.com (mail-lf0-f51.google.com [209.85.215.51])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id n6ir91qa67cr5vfvdp52nmt0t85l7gku2v5lipo1
+ for slice@myrenthelper.com;
+ Wed, 20 Jun 2018 19:06:49 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: none (spfCheck: 209.85.215.51 is neither permitted nor denied by domain of renthero.com) client-ip=209.85.215.51; envelope-from=admin@renthero.com; helo=mail-lf0-f51.google.com;
+Authentication-Results: amazonses.com;
+ spf=none (spfCheck: 209.85.215.51 is neither permitted nor denied by domain of renthero.com) client-ip=209.85.215.51; envelope-from=admin@renthero.com; helo=mail-lf0-f51.google.com;
+ dkim=pass header.i=@renthero-com.20150623.gappssmtp.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFIT2hmWm9MMmQzSUxnWktZV1hpVkcrdDBwRjdqNWNDOHljdktVODBhTWViL2wxQXR6OUZZTlA0dXdWMlpoV1RxNEJmd0NwbnpnbnQyNmxCVEtZRFZ6TjNZTVphSUlPTzZWS0EvbDFtSkYzWlF6d1o4TWZVbGRiQlplc2VDMzl1QWYvZjl5T0psZ3ZFaTZDR2tEYkIxYVByL2svb2tHQStxMTNsSm1zVFg4cDF2Q2xQRzZJRHdQWUdsdkZBRU84TGtpQzVLeGlHSU00TjVvSU82QURTejRFVTNIdTZlN051M00zNnJMR0xlcDVnbnd3ZlllcHgwSGh3eklvY00rZ1N0Snl1akdLbFFEQ0U2dDFBOGpmaHdhOGZtNFBmOG5mVnd2blhsYi81Y0ZGSmc9PQ==
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=TrBYsw3g2x/2RiGWu9/3a46PN2ya0YECRpkCdT5+OxwZYA/hqsSoNye2JQ9dAcwqOmvcC4AunceHKEqw1mKRNlNtrg6z2WFyGHy0ECZuZd+Vh2JyoiXgfroQoRJipj58mZV59tTSUPQvU5A8pwlP/lkSUisid6o2cuXIi4IKrfk=; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1529521609; v=1; bh=GfZScJI1Vuda66UGyoP8TOh0gmOErCkLFErnCxLNKKo=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-lf0-f51.google.com with SMTP id a13-v6so883139lfk.12
+        for <slice@myrenthelper.com>; Wed, 20 Jun 2018 12:06:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=renthero-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=GfZScJI1Vuda66UGyoP8TOh0gmOErCkLFErnCxLNKKo=;
+        b=w4zOiG9jQRAtfzEOR40Ac4It7xt12EhGMXjZyxuZlndgZvi+08RW613jEqaLMwvGRJ
+         +vdEdfftD70t9t+mCUgHX12yCU1NpjYB7DTwApmXf0uljQdmbVesGSlO/0jydmyZ2d1c
+         8IDLycpRXfQwSD+gFgO46e4ic75mXvdJhaGR4APWiNUV2PNRe/0dFwrd0us828GICBQa
+         QPK8eHLDuHf3NDtXVjnIbpkkmUvweVAF+SNplvQ3gPeT8qR5y3cuMSAX2lhJbFkecn1Z
+         4PgH2sVlmTujsMEmsPt/ys45zyLzqQPfIO3qfOyrw71PzDEM3N8xdbxM872ico1dr08m
+         2eJg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=GfZScJI1Vuda66UGyoP8TOh0gmOErCkLFErnCxLNKKo=;
+        b=ZjS8UjQSVzN78G7puMB3r9U+x5UTZPfGIPvWirBQZ7xD2ERHVkegzjnjHs4A9tlPJB
+         /Ctp9r162DgOBt7X5NgBy3an6SjaJU7sRgSx1dlotBA//GFBwhiF8yj1mKDDiyJm9AyU
+         GXauE33KMWHbYKb4wN90gUISihGuEvHK881JYBMHoU+ldH9d6RVJ8j4SOOyBE0NEPkB8
+         66dOQZF+W9QBmRoMb3GquFJDwX36ZFFp9G2TpgreNVIMveXCvytmgZNgOhqdMLzLbSUb
+         0W2WweW5igJXPlg8CP3iW6PyQKefAjHxCU0PTKguUFv7w1WpL0HI5D4+4ASvldng92ej
+         DuRQ==
+X-Gm-Message-State: APt69E3fRObjjWO2v4ssECWVaCj/++ajOn+s7l5UEpOZcDt1oXtzILGr
+	ULIldZQqLqfmC3ZjW8Nx3TqTkliDADDPmAOsOTr3OiM8
+X-Google-Smtp-Source: ADUXVKIAC1z8WNOH4OtZ7ny1kIK5btXTYmzXSBux+pnucUqNfi/xSd5B9GEQIXNxFArurQq5aPn/3nF8S6mhl4mLPdA=
+X-Received: by 2002:a2e:3613:: with SMTP id d19-v6mr15031897lja.31.1529521607466;
+ Wed, 20 Jun 2018 12:06:47 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 2002:a19:5007:0:0:0:0:0 with HTTP; Wed, 20 Jun 2018 12:06:46
+ -0700 (PDT)
+X-Originating-IP: [208.72.125.2]
+From: RentHero Admin <admin@renthero.com>
+Date: Wed, 20 Jun 2018 15:06:46 -0400
+Message-ID: <CAHSKJ1iN235XazJjcZtLT8QYO3EPr0mMWOjcz4j=XxLhzhM9MA@mail.gmail.com>
+Subject: JIMBO SLICE
+To: slice@myrenthelper.com
+Content-Type: multipart/alternative; boundary="00000000000016f5b2056f1780b2"
+
+--00000000000016f5b2056f1780b2
+Content-Type: text/plain; charset="UTF-8"
+
+DUCK
+
+--00000000000016f5b2056f1780b2
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">DUCK</div>
+
+--00000000000016f5b2056f1780b2--

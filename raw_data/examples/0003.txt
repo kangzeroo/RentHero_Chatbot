@@ -1,0 +1,20 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+
+---TENANT---
+
+Hi,
+
+I'm a PhD candidate of UW. Do you have any room available for a four months lease?
+
+Regards,
+Mohammad
+
+---LANDLORD---
+
+Hi Mohammad
+I am sorry we do not have 4 month leases.
+Jody

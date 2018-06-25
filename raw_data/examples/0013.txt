@@ -1,0 +1,22 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello,
+
+A group of PhD students and I are looking for a 5-bedroom apartment starting September. Is 16 Columbia still available, and if so may we schedule a tour?
+
+Thanks,
+-Nathan
+
+
+---LANDLORD---
+
+Hi Nathan
+We have a 5 bedroom unit available at 16 Columbia .
+We can schedule for tomorrow at 5pm if that works for you?
+Thank you
+Jody

@@ -1,0 +1,38 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I’m wondering if this is still available?
+
+---LANDLORD---
+
+Yes it is. When are you available?
+Thank you
+Jody
+
+
+---TENANT---
+
+today
+
+---LANDLORD---
+
+Hi Amber
+Do you have a phone number?
+Are you available at 5pm?
+Jody
+
+
+---TENANT---
+
+5194001423 text only though and yes 5 sounds good
+
+---LANDLORD---
+
+Great, I will meet you at 319 Erb
+at 5 pm.
+Thank you
+Jody

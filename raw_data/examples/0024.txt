@@ -1,0 +1,34 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Can i set up a viewing?
+
+---LANDLORD---
+
+Hi Jordana
+Are you available tomorrow?
+Do you have a contact number?
+Thank you
+Jody
+
+
+---TENANT---
+
+i don't have a contact number right now, but anytime tomorrow works.
+
+---LANDLORD---
+
+Hi Jordana
+We can schedule for 12 noon tomorrow.
+I will meet you at 319 Erb.
+Thank you
+Jody
+
+
+---TENANT---
+
+Great thank you!

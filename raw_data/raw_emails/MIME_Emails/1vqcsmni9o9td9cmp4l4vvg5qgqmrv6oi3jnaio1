@@ -1,0 +1,1063 @@
+Return-Path: <email.records.rentburrow@gmail.com>
+Received: from mail-wr0-f174.google.com (mail-wr0-f174.google.com [209.85.128.174])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id 1vqcsmni9o9td9cmp4l4vvg5qgqmrv6oi3jnaio1
+ for somebody@myrenthelper.com;
+ Wed, 20 Jun 2018 20:42:39 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: pass (spfCheck: domain of _spf.google.com designates 209.85.128.174 as permitted sender) client-ip=209.85.128.174; envelope-from=email.records.rentburrow@gmail.com; helo=mail-wr0-f174.google.com;
+Authentication-Results: amazonses.com;
+ spf=pass (spfCheck: domain of _spf.google.com designates 209.85.128.174 as permitted sender) client-ip=209.85.128.174; envelope-from=email.records.rentburrow@gmail.com; helo=mail-wr0-f174.google.com;
+ dkim=pass header.i=@gmail.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFHWTdFNy9TYUkzZlBQUFdxaDZxRThuTGpsQmhzdThyY01HT3J0cjNTMTY4R2M5T1BmUlAxMWU3UzA1N2pGUXF0ZUpFTGxHaW5rRkZjWnhTMFFGZDYrSEFjNHFFREFSNnFZWUZXNytzdlE5OFNlRGJQdGxWTlIvQmJiQ1o5TEgxVm52OTk1VUJwREZQbUZYNU1VTlVUQmhlTDdrOVpHb21tY0xvSVBVRjVpdmpxek95SnR5dlhiTFo3QnovL2FiNlVTMW1Vd0hRemVVZ2hsdHJndkNzdERpOThvaGRMSThnaXVJVG5DNXcrcXZYeTd0UE1kSVQ5M1pqSGRFalphanJKSEJvWnJna29SSmVVZ0UrTzhHWFBNUk9JeWZNNHo0RDVuVkZqdE5nWGw3Mks2WldpaGh2SmhGWTdvM0F3REFRY289
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=EoQ2HKDAE2hvH0TgsQXeZNVEfOkD/v3tRqxft5AYAjGzuKSDIiSB29geOpHGylW9Nu4WS89Za4hgEoXANxRj9293E5IHGRGwF76Y1smNugRq9XkmHIZBB/S/N5OItsiV2CRwSOgW65kkNQWhEgXpBkVzivPHAimR4bPZWp5B/BM=; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1529527360; v=1; bh=btJEOWiGuhQzfZbfvBGFj5Lp7CDuDpkoUJdOUxZgKmM=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-wr0-f174.google.com with SMTP id v13-v6so805706wrp.13
+        for <somebody@myrenthelper.com>; Wed, 20 Jun 2018 13:42:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=dA1TVU6Z2ljgrO7ibuX6c8HYZ1m6LwEEU9QO274z+x0=;
+        b=dEZUN/Qg7TBhz0+cLF6evAdtEDDe//nkCZypnCcdF3D0Yeb1Y/4K+/+rVwDDD8Q4cT
+         V4bPqQLvLbSsliLB574SWNugI6W4sM+D1xRaLYm3ddxAPLGJdd/gXdHmRuJPJhLk3E/O
+         NpJ+JyW51UH6HvfPW3cRm5dynhoiD0pr29l0WRZYbf44nzM2zMiX6ciOKI8Uq+AVDT6Q
+         1RSvEKubgpTT+2S/7xcsyQr9lIATI4wHd36/Ewpta3K9g5vYjmZ1oRh0sktPwsz5IkyJ
+         DOGJAemoui3S46Y/Ka80WjwCeT1yWMAQjWbiM6aA6UaZ0ZecfuZagDxnL0a4Exvd2sPE
+         x6xA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=dA1TVU6Z2ljgrO7ibuX6c8HYZ1m6LwEEU9QO274z+x0=;
+        b=F45A09YnjhOgIdpkcfIEe+rXB2zRjO4cLlS4R1Us2fTsc+uDWZXhToXD2dOzuIRLpW
+         okxMsS5lXFCOe6aafGj2m7VayTkeZ5mtm96s8YurRRhYGRMVi47XtahP7euXtZJiMgri
+         Ljg3W2BNboq3MZ5XgHxJfU/YvUwhFY+W+4e1fvye3uE+VhDZecwg2pBCDAVJ5Ho+EjCd
+         T0unZni+7ell9TGx58xqvfx/EBRXPRJMoyEueM8dd3mcU9g/qc9RXc1X0JriO7na5Ett
+         Mq5QXGD/iQpV17MEBgSCYZVOIDVnolpDTi7nz2RtBKQ0mnEBcoIBQG/5YKjj+5fdXoIx
+         0Yww==
+X-Gm-Message-State: APt69E1Pf8fct/BldlN01+YomLkw8Qj/x3XahUnk8KKlcWpO8Uytd4cR
+	2Qy57DtaToK7un5/axgUB7cAKet4sI43HZimNig4nA==
+X-Google-Smtp-Source: ADUXVKI6CecFtYX7SWdCQPWDG0jxMqUcqrHu+YBY840Y2j+YIfB+6182hckyRnZNDey4xx8cC8LfD+WM+UNq2JBhn1s=
+X-Received: by 2002:adf:9cca:: with SMTP id h10-v6mr18551092wre.11.1529527357933;
+ Wed, 20 Jun 2018 13:42:37 -0700 (PDT)
+MIME-Version: 1.0
+References: <010001623ef47269-95617d80-1a49-495d-847d-f821828884f8-000000@email.amazonses.com>
+In-Reply-To: <010001623ef47269-95617d80-1a49-495d-847d-f821828884f8-000000@email.amazonses.com>
+From: RentBurrow Email Record <email.records.rentburrow@gmail.com>
+Date: Wed, 20 Jun 2018 16:42:26 -0400
+Message-ID: <CAC4pDXEqNCWaTzOPiyfcmNpcxOEVFK75sS3v_G3s8haVp=RUng@mail.gmail.com>
+Subject: Fwd: RentHero Inquiry for 115 Albert Street, Waterloo
+To: somebody@myrenthelper.com
+Content-Type: multipart/alternative; boundary="000000000000d80d39056f18d670"
+
+--000000000000d80d39056f18d670
+Content-Type: text/plain; charset="UTF-8"
+
+---------- Forwarded message ---------
+From: <CharlesBinks-Collier.SylookHIM@renthero.cc>
+Date: Mon, Mar 19, 2018 at 11:50 AM
+Subject: Re: RentHero Inquiry for 115 Albert Street, Waterloo
+To: <grantmuck@rogers.com>
+
+
+Hi grant just wanted to confirm today for my roomates, are you still good
+for 130
+
+
+On Tue, Mar 13, 2018 at 1:10 PM, Charles Binks-Collier <binkssam@gmail.com>
+wrote:
+
+> Yes
+>
+> On Tue, Mar 13, 2018 at 12:32 PM, <grant.muck@renthero.cc> wrote:
+>
+>> You mean Monday March 19 ?
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier.SylookHIM@renthero.cc"
+>> <CharlesBinks-Collier.SylookHIM@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Tuesday, March 13, 2018 12:27 PM
+>> *Subject:* Re: RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> could they come by monday at 130
+>>
+>>
+>> On Tue, Mar 13, 2018 at 12:07 PM, <grant.muck@renthero.cc> wrote:
+>>
+>> Sorry. Just the one you toured. The girls at 77 Seagram
+>> <https://maps.google.com/?q=77+Seagram&entry=gmail&source=g> are going
+>> to stay.
+>>
+>> Grant.
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier. SylookHIM@renthero.cc"
+>> <CharlesBinks-Collier. SylookHIM@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Tuesday, March 13, 2018 12:04 PM
+>> *Subject:* Re: RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> Ill ask them when they are free to set up a time. Are both places on
+>> seagram available or just the one we toured?
+>>
+>>
+>> On Tue, Mar 13, 2018 at 11:25 AM, <grant.muck@renthero.cc> wrote:
+>>
+>> Still available. Did you want to have the rest of your group tour?
+>>
+>> Grant.
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier. SylookHIM@renthero.cc"
+>> <CharlesBinks-Collier. SylookHIM@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Tuesday, March 13, 2018 10:34 AM
+>> *Subject:* Re: RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> Hi Grant,
+>>
+>> I just wanted to check in to see if you have filled the apartment rooms
+>> you have.
+>>
+>> Charles
+>>
+>> On Thu, Feb 15, 2018 at 4:17 PM, Charles Binks-Collier <
+>> binkssam@gmail.com> wrote:
+>>
+>> Sounds great.
+>>
+>>
+>> On Thu, Feb 15, 2018 at 3:32 PM, <grant.muck@renthero.cc> wrote:
+>>
+>> I'll set it up for 1:30 pm.
+>>
+>> Grant.
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier.SylookHI M@renthero.cc"
+>> <CharlesBinks-Collier.SylookHI M@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Thursday, February 15, 2018 1:13 PM
+>> *Subject:* Re: RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> Hey Grant,
+>>
+>> Is it possible for us to tour earlier in the day, that would be best for
+>> us. If not 1:30 - 2:15 would be good anytime in there.
+>>
+>> Charles
+>>
+>> On Thu, Feb 15, 2018 at 8:36 AM, <grant.muck@renthero.cc> wrote:
+>>
+>> Hi Charles, I am showing 77 Seagram
+>> <https://maps.google.com/?q=77+Seagram&entry=gmail&source=g> on Friday
+>> afternoon. Would you like to tour it ?  Albert is sold out.
+>>
+>> Let me know.
+>>
+>> Thanks, Grant.
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier. SylookHIM@renthero.cc"
+>> <CharlesBinks-Collier. SylookHIM@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Saturday, February 10, 2018 1:30 PM
+>> *Subject:* Re: RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> Hi,
+>> Can we see the house sometime this week
+>>
+>>
+>> On Mon, Feb 5, 2018 at 3:08 PM, Charles Binks-Collier <binkssam@gmail.com
+>> > wrote:
+>>
+>> Hello,
+>>
+>> Could our group of 4, waiting to hear back from our 5th, see the house on
+>> saturday.
+>>
+>> Charles
+>>
+>> On Mon, Feb 5, 2018 at 10:13 AM, <grant.muck@renthero.cc> wrote:
+>>
+>> Hi Charles, How many in your group and when would you like to tour?
+>>
+>> Grant.
+>>
+>>
+>> ------------------------------
+>> *From:* "CharlesBinks-Collier.SylookHI M@renthero.cc"
+>> <CharlesBinks-Collier.SylookHI M@renthero.cc>
+>> *To:* grantmuck@rogers.com
+>> *Sent:* Sunday, February 4, 2018 3:22 PM
+>> *Subject:* RentHero Inquiry for 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g>
+>>
+>> RentHero.ca Inquiry
+>> 115 Albert Street, Waterloo
+>> <https://maps.google.com/?q=115+Albert+Street,+Waterloo&entry=gmail&source=g> Charles
+>> Binks-Collier sent a message:
+>>
+>> When is a tour available
+>> You can respond to the tenant by directly replying to this email.
+>>
+>> View your ad on https://renthero.ca/115-Albert By using RentHero you
+>> agree to our terms of use <https://renthero.ca/termsandconditions>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>
+
+--000000000000d80d39056f18d670
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr">------=
+---- Forwarded message ---------<br>From: <span dir=3D"ltr">&lt;CharlesBink=
+s-Collier.SylookHIM@renthero.cc&gt;</span><br>Date: Mon, Mar 19, 2018 at 11=
+:50 AM<br>Subject: Re: RentHero Inquiry for 115 Albert Street, Waterloo<br>=
+To:  &lt;<a href=3D"mailto:grantmuck@rogers.com">grantmuck@rogers.com</a>&g=
+t;<br></div><br><br><div dir=3D"ltr">Hi grant just wanted to confirm today =
+for my roomates, are you still good for 130<div><br></div></div><div class=
+=3D"gmail_extra"><br><div class=3D"gmail_quote">On Tue, Mar 13, 2018 at 1:1=
+0 PM, Charles Binks-Collier <span dir=3D"ltr">&lt;<a href=3D"mailto:binkssa=
+m@gmail.com" target=3D"_blank">binkssam@gmail.com</a>&gt;</span> wrote:<br>=
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex"><div dir=3D"ltr">Yes</div><div class=3D"m_13=
+0512838321812541HOEnZb"><div class=3D"m_130512838321812541h5"><div class=3D=
+"gmail_extra"><br><div class=3D"gmail_quote">On Tue, Mar 13, 2018 at 12:32 =
+PM,  <span dir=3D"ltr">&lt;<a href=3D"mailto:grant.muck@renthero.cc" target=
+=3D"_blank">grant.muck@renthero.cc</a>&gt;</span> wrote:<br><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;pa=
+dding-left:1ex"><div><div style=3D"color:#000;background-color:#fff;font-fa=
+mily:Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:13px=
+"><div><span>You mean Monday March 19 ?</span></div><div class=3D"m_1305128=
+38321812541m_-3760843485775849132m_5010484127500369564qtdSeparateBR"><br><b=
+r></div><div class=3D"m_130512838321812541m_-3760843485775849132m_501048412=
+7500369564yahoo_quoted" id=3D"m_130512838321812541m_-3760843485775849132m_5=
+010484127500369564yui_3_16_0_ym19_1_1520955996194_16460" style=3D"display:b=
+lock">  <div style=3D"font-family:Helvetica Neue,Helvetica,Arial,Lucida Gra=
+nde,sans-serif;font-size:13px" id=3D"m_130512838321812541m_-376084348577584=
+9132m_5010484127500369564yui_3_16_0_ym19_1_1520955996194_16459"> <div style=
+=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,=
+sans-serif;font-size:16px" id=3D"m_130512838321812541m_-3760843485775849132=
+m_5010484127500369564yui_3_16_0_ym19_1_1520955996194_16458"> <div dir=3D"lt=
+r" id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yui=
+_3_16_0_ym19_1_1520955996194_16457"> <font size=3D"2" face=3D"Arial" id=3D"=
+m_130512838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_y=
+m19_1_1520955996194_16456"><span> <hr size=3D"1"> <b><span style=3D"font-we=
+ight:bold">From:</span></b> &quot;CharlesBinks-Collier.SylookHIM@renthero.c=
+c&quot; &lt;CharlesBinks-Collier.SylookHIM@renthero.cc&gt;<br> <b id=3D"m_1=
+30512838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19=
+_1_1520955996194_16455"><span style=3D"font-weight:bold" id=3D"m_1305128383=
+21812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_152095=
+5996194_16454">To:</span></b> <a href=3D"mailto:grantmuck@rogers.com" targe=
+t=3D"_blank">grantmuck@rogers.com</a> <br> </span><b id=3D"m_13051283832181=
+2541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_1520955996=
+194_16462"><span style=3D"font-weight:bold" id=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yui_3_16_0_ym19_1_1520955996194_16461=
+">Sent:</span></b> Tuesday, March 13, 2018 12:27 PM<span><br> <b id=3D"m_13=
+0512838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_=
+1_1520955996194_16464"><span style=3D"font-weight:bold" id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_1520955=
+996194_16463">Subject:</span></b> Re: RentHero Inquiry for <a href=3D"https=
+://maps.google.com/?q=3D115+Albert+Street,+Waterloo&amp;entry=3Dgmail&amp;s=
+ource=3Dg" target=3D"_blank">115 Albert Street, Waterloo</a><br> </span></f=
+ont> </div> <div class=3D"m_130512838321812541m_-3760843485775849132m_50104=
+84127500369564y_msg_container" id=3D"m_130512838321812541m_-376084348577584=
+9132m_5010484127500369564yui_3_16_0_ym19_1_1520955996194_16467"><br><div id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152"><div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yui_3_16_0_ym19_1_1520955996194_16466"><span><div dir=3D"ltr" id=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym=
+19_1_1520955996194_16465">could they come by monday at 130<div id=3D"m_1305=
+12838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_=
+1520955996194_16468"><br clear=3D"none"></div></div></span><div class=3D"m_=
+130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152y=
+qt0848149407" id=3D"m_130512838321812541m_-3760843485775849132m_50104841275=
+00369564yiv7176427152yqt49944"><div class=3D"m_130512838321812541m_-3760843=
+485775849132m_5010484127500369564yiv7176427152gmail_extra" id=3D"m_13051283=
+8321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_1520=
+955996194_16469"><br clear=3D"none"><div class=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152gmail_quote" id=3D"m_130=
+512838321812541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1=
+_1520955996194_16473"><span>On Tue, Mar 13, 2018 at 12:07 PM,  <span dir=3D=
+"ltr">&lt;<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:grant.muck@rent=
+hero.cc" target=3D"_blank">grant.muck@renthero.cc</a>&gt;</span> wrote:<br =
+clear=3D"none"></span><blockquote class=3D"m_130512838321812541m_-376084348=
+5775849132m_5010484127500369564yiv7176427152gmail_quote" style=3D"margin:0 =
+0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex" id=3D"m_1305128383218=
+12541m_-3760843485775849132m_5010484127500369564yui_3_16_0_ym19_1_152095599=
+6194_16472"><div id=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yui_3_16_0_ym19_1_1520955996194_16471"><div style=3D"color:#000;=
+background-color:#fff;font-family:Helvetica Neue,Helvetica,Arial,Lucida Gra=
+nde,sans-serif;font-size:13px" id=3D"m_130512838321812541m_-376084348577584=
+9132m_5010484127500369564yui_3_16_0_ym19_1_1520955996194_16470"><span><div =
+dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_10=
+850"><span id=3D"m_130512838321812541m_-3760843485775849132m_50104841275003=
+69564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_108=
+49">Sorry. Just the one you toured. The girls at <a rel=3D"nofollow" shape=
+=3D"rect" href=3D"https://maps.google.com/?q=3D77+Seagram&amp;entry=3Dgmail=
+&amp;source=3Dg" target=3D"_blank">77 Seagram</a> are going to stay.</span>=
+</div><div dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_50=
+10484127500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_15209=
+55996194_10851"><span><br clear=3D"none"></span></div><div dir=3D"ltr" id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_10852">Grant.</d=
+iv><div class=3D"m_130512838321812541m_-3760843485775849132m_50104841275003=
+69564yiv7176427152m_-8530391258315371795qtdSeparateBR" id=3D"m_130512838321=
+812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391258=
+315371795yui_3_16_0_ym19_1_1520955996194_10853"><br clear=3D"none"><br clea=
+r=3D"none"></div></span><div class=3D"m_130512838321812541m_-37608434857758=
+49132m_5010484127500369564yiv7176427152m_-8530391258315371795yahoo_quoted" =
+id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv717=
+6427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_10857" style=
+=3D"display:block">  <div id=3D"m_130512838321812541m_-3760843485775849132m=
+_5010484127500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_15=
+20955996194_10856" style=3D"font-family:Helvetica Neue,Helvetica,Arial,Luci=
+da Grande,sans-serif;font-size:13px"> <div id=3D"m_130512838321812541m_-376=
+0843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yui=
+_3_16_0_ym19_1_1520955996194_10855" style=3D"font-family:HelveticaNeue,Helv=
+etica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:16px"> <div d=
+ir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_50104841275003=
+69564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_108=
+54"> <font id=3D"m_130512838321812541m_-3760843485775849132m_50104841275003=
+69564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_108=
+58" size=3D"2" face=3D"Arial"><span class=3D"m_130512838321812541m_-3760843=
+485775849132m_5010484127500369564yiv7176427152"> </span></font><hr size=3D"=
+1"><div><div class=3D"m_130512838321812541m_-3760843485775849132h5"> <b><sp=
+an style=3D"font-weight:bold">From:</span></b> &quot;CharlesBinks-Collier. =
+SylookHIM@renthero.cc&quot; &lt;CharlesBinks-Collier. SylookHIM@renthero.cc=
+&gt;<br clear=3D"none"> <b><span style=3D"font-weight:bold">To:</span></b> =
+<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:grantmuck@rogers.com" tar=
+get=3D"_blank">grantmuck@rogers.com</a> <br clear=3D"none"> <b><span style=
+=3D"font-weight:bold">Sent:</span></b> Tuesday, March 13, 2018 12:04 PM<spa=
+n class=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564y=
+iv7176427152"><br clear=3D"none"> <b><span style=3D"font-weight:bold">Subje=
+ct:</span></b> Re: RentHero Inquiry for <a rel=3D"nofollow" shape=3D"rect" =
+href=3D"https://maps.google.com/?q=3D115+Albert+Street,+Waterloo&amp;entry=
+=3Dgmail&amp;source=3Dg" target=3D"_blank">115 Albert Street, Waterloo</a><=
+br clear=3D"none"> </span> </div></div></div><div><div class=3D"m_130512838=
+321812541m_-3760843485775849132h5"> <div class=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795y_=
+msg_container" id=3D"m_130512838321812541m_-3760843485775849132m_5010484127=
+500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194=
+_10859"><br clear=3D"none"><div id=3D"m_130512838321812541m_-37608434857758=
+49132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188"=
+><div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564=
+yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_10861"><=
+span class=3D"m_130512838321812541m_-3760843485775849132m_50104841275003695=
+64yiv7176427152"></span><div dir=3D"ltr" id=3D"m_130512838321812541m_-37608=
+43485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yui_3=
+_16_0_ym19_1_1520955996194_10860">Ill ask them when they are free to set up=
+ a time. Are both places on seagram available or just the one we toured?<di=
+v id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7=
+176427152m_-8530391258315371795yui_3_16_0_ym19_1_1520955996194_10862"><br c=
+lear=3D"none"></div></div><div class=3D"m_130512838321812541m_-376084348577=
+5849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496348118=
+8yqt9255155329" id=3D"m_130512838321812541m_-3760843485775849132m_501048412=
+7500369564yiv7176427152m_-8530391258315371795yiv4963481188yqt93794"><div cl=
+ass=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71=
+76427152m_-8530391258315371795yiv4963481188gmail_extra" id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yui_3_16_0_ym19_1_1520955996194_10863"><br clear=3D"none"><div cl=
+ass=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71=
+76427152m_-8530391258315371795yiv4963481188gmail_quote" id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yui_3_16_0_ym19_1_1520955996194_10864"><span class=3D"m_130512838=
+321812541m_-3760843485775849132m_5010484127500369564yiv7176427152">On Tue, =
+Mar 13, 2018 at 11:25 AM,  <span dir=3D"ltr">&lt;<a rel=3D"nofollow" shape=
+=3D"rect" href=3D"mailto:grant.muck@renthero.cc" target=3D"_blank">grant.mu=
+ck@renthero.cc</a>&gt;</span> wrote:<br clear=3D"none"></span><blockquote c=
+lass=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7=
+176427152m_-8530391258315371795yiv4963481188gmail_quote" id=3D"m_1305128383=
+21812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912=
+58315371795yui_3_16_0_ym19_1_1520955996194_10869" style=3D"margin:0 0 0 .8e=
+x;border-left:1px #ccc solid;padding-left:1ex"><div id=3D"m_130512838321812=
+541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391258315=
+371795yui_3_16_0_ym19_1_1520955996194_10868"><div id=3D"m_13051283832181254=
+1m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537=
+1795yui_3_16_0_ym19_1_1520955996194_10867" style=3D"color:#000;background-c=
+olor:#fff;font-family:Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-ser=
+if;font-size:13px"><span class=3D"m_130512838321812541m_-376084348577584913=
+2m_5010484127500369564yiv7176427152"></span><div id=3D"m_130512838321812541=
+m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371=
+795yui_3_16_0_ym19_1_1520955996194_10866"><span id=3D"m_130512838321812541m=
+_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583153717=
+95yui_3_16_0_ym19_1_1520955996194_10865">Still available. Did you want to h=
+ave the rest of your group tour?=C2=A0</span></div><div id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yui_3_16_0_ym19_1_1520955996194_10870"><span><br clear=3D"none"><=
+/span></div><div id=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_15209559961=
+94_10871"><span>Grant.</span></div><div class=3D"m_130512838321812541m_-376=
+0843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv=
+4963481188m_-3944238669377256398qtdSeparateBR" id=3D"m_130512838321812541m_=
+-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537179=
+5yui_3_16_0_ym19_1_1520955996194_10872"><br clear=3D"none"><br clear=3D"non=
+e"></div><div class=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377=
+256398yahoo_quoted" id=3D"m_130512838321812541m_-3760843485775849132m_50104=
+84127500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1_15209559=
+96194_10877" style=3D"display:block">  <div id=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yu=
+i_3_16_0_ym19_1_1520955996194_10876" style=3D"font-family:Helvetica Neue,He=
+lvetica,Arial,Lucida Grande,sans-serif;font-size:13px"> <div id=3D"m_130512=
+838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530=
+391258315371795yui_3_16_0_ym19_1_1520955996194_10875" style=3D"font-family:=
+HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-=
+size:16px"> <div dir=3D"ltr" id=3D"m_130512838321812541m_-37608434857758491=
+32m_5010484127500369564yiv7176427152m_-8530391258315371795yui_3_16_0_ym19_1=
+_1520955996194_10874"> <font size=3D"2" face=3D"Arial"><span class=3D"m_130=
+512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8=
+530391258315371795yiv4963481188"> </span></font><hr id=3D"m_130512838321812=
+541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391258315=
+371795yui_3_16_0_ym19_1_1520955996194_10873" size=3D"1"><div><div class=3D"=
+m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv717642715=
+2h5"> <b><span style=3D"font-weight:bold">From:</span></b> &quot;CharlesBin=
+ks-Collier. SylookHIM@renthero.cc&quot; &lt;CharlesBinks-Collier. SylookHIM=
+@renthero.cc&gt;<br clear=3D"none"> <b><span style=3D"font-weight:bold">To:=
+</span></b> <a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:grantmuck@rog=
+ers.com" target=3D"_blank">grantmuck@rogers.com</a> <br clear=3D"none"> <b>=
+<span style=3D"font-weight:bold">Sent:</span></b> Tuesday, March 13, 2018 1=
+0:34 AM<span class=3D"m_130512838321812541m_-3760843485775849132m_501048412=
+7500369564yiv7176427152m_-8530391258315371795yiv4963481188"><br clear=3D"no=
+ne"> <b><span style=3D"font-weight:bold">Subject:</span></b> Re: RentHero I=
+nquiry for <a rel=3D"nofollow" shape=3D"rect" href=3D"https://maps.google.c=
+om/?q=3D115+Albert+Street,+Waterloo&amp;entry=3Dgmail&amp;source=3Dg" targe=
+t=3D"_blank">115 Albert Street, Waterloo</a><br clear=3D"none"> </span> </d=
+iv></div></div><div><div class=3D"m_130512838321812541m_-376084348577584913=
+2m_5010484127500369564yiv7176427152h5"> <div class=3D"m_130512838321812541m=
+_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583153717=
+95yiv4963481188m_-3944238669377256398y_msg_container"><br clear=3D"none"><d=
+iv id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv=
+7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv36160=
+09277"><div><span class=3D"m_130512838321812541m_-3760843485775849132m_5010=
+484127500369564yiv7176427152m_-8530391258315371795yiv4963481188"></span><di=
+v dir=3D"ltr"><div>Hi Grant,</div><div><br clear=3D"none"></div><div>I just=
+ wanted to check in to see if you have filled the apartment rooms you have.=
+</div><div><br clear=3D"none"></div><div>Charles</div></div><div class=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152=
+m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277yqt04=
+04550989" id=3D"m_130512838321812541m_-3760843485775849132m_501048412750036=
+9564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398y=
+iv3616009277yqt33297"><div class=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277gmail_extra"><br clear=3D"none"><div class=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277=
+gmail_quote"><span class=3D"m_130512838321812541m_-3760843485775849132m_501=
+0484127500369564yiv7176427152m_-8530391258315371795yiv4963481188">On Thu, F=
+eb 15, 2018 at 4:17 PM, Charles Binks-Collier <span dir=3D"ltr">&lt;<a rel=
+=3D"nofollow" shape=3D"rect" href=3D"mailto:binkssam@gmail.com" target=3D"_=
+blank">binkssam@gmail.com</a>&gt;</span> wrote:<br clear=3D"none"></span><b=
+lockquote class=3D"m_130512838321812541m_-3760843485775849132m_501048412750=
+0369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693772563=
+98yiv3616009277gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc=
+ solid;padding-left:1ex"><div dir=3D"ltr">Sounds great.<div><br clear=3D"no=
+ne"></div></div><div class=3D"m_130512838321812541m_-3760843485775849132m_5=
+010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423=
+8669377256398yiv3616009277HOEnZb"><div class=3D"m_130512838321812541m_-3760=
+843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4=
+963481188m_-3944238669377256398yiv3616009277h5"><div class=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yiv4963481188m_-3944238669377256398yiv3616009277gmail_extra"><br =
+clear=3D"none"><div class=3D"m_130512838321812541m_-3760843485775849132m_50=
+10484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238=
+669377256398yiv3616009277gmail_quote"><span class=3D"m_130512838321812541m_=
+-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537179=
+5yiv4963481188">On Thu, Feb 15, 2018 at 3:32 PM,  <span dir=3D"ltr">&lt;<a =
+rel=3D"nofollow" shape=3D"rect" href=3D"mailto:grant.muck@renthero.cc" targ=
+et=3D"_blank">grant.muck@renthero.cc</a>&gt;</span> wrote:<br clear=3D"none=
+"></span><blockquote class=3D"m_130512838321812541m_-3760843485775849132m_5=
+010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423=
+8669377256398yiv3616009277gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;pa=
+dding-left:1ex;border-left-color:rgb(204,204,204);border-left-width:1px;bor=
+der-left-style:solid"><div><div style=3D"color:rgb(0,0,0);font-family:Helve=
+tica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:13px;backgroun=
+d-color:rgb(255,255,255)"><span class=3D"m_130512838321812541m_-37608434857=
+75849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv49634811=
+88"></span><div id=3D"m_130512838321812541m_-3760843485775849132m_501048412=
+7500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693772=
+56398yiv3616009277m_-8732077782570635685m_1627362460916606000yui_3_16_0_ym1=
+9_1_1518725096501_4853"><span id=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000=
+yui_3_16_0_ym19_1_1518725096501_4852">I&#39;ll set it up for 1:30 pm.</span=
+></div><div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866937725639=
+8yiv3616009277m_-8732077782570635685m_1627362460916606000yui_3_16_0_ym19_1_=
+1518725096501_4854"><span><br clear=3D"none"></span></div><div id=3D"m_1305=
+12838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85=
+30391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077=
+782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4856"><spa=
+n id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7=
+176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv361600=
+9277m_-8732077782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096=
+501_4855">Grant.</span></div><div class=3D"m_130512838321812541m_-376084348=
+5775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496348=
+1188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246091=
+6606000qtdSeparateBR" id=3D"m_130512838321812541m_-3760843485775849132m_501=
+0484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386=
+69377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yui_3_16=
+_0_ym19_1_1518725096501_4857"><br clear=3D"none"><br clear=3D"none"></div><=
+div class=3D"m_130512838321812541m_-3760843485775849132m_501048412750036956=
+4yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3=
+616009277m_-8732077782570635685m_1627362460916606000yahoo_quoted" id=3D"m_1=
+30512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_=
+-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732=
+077782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4861" s=
+tyle=3D"display:block">  <div id=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000=
+yui_3_16_0_ym19_1_1518725096501_4860" style=3D"font-family:Helvetica Neue,H=
+elvetica,Arial,Lucida Grande,sans-serif;font-size:13px"> <div id=3D"m_13051=
+2838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853=
+0391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777=
+82570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4859" style=
+=3D"font-family:HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,=
+sans-serif;font-size:16px"> <div dir=3D"ltr" id=3D"m_130512838321812541m_-3=
+760843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795y=
+iv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627=
+362460916606000yui_3_16_0_ym19_1_1518725096501_4858"> <font id=3D"m_1305128=
+38321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303=
+91258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782=
+570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4864" face=3D=
+"Arial" size=3D"2"><span> </span></font><hr size=3D"1"><div><div class=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152=
+m_-8530391258315371795yiv4963481188h5"> <b id=3D"m_130512838321812541m_-376=
+0843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv=
+4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736=
+2460916606000yui_3_16_0_ym19_1_1518725096501_4863"><span id=3D"m_1305128383=
+21812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912=
+58315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570=
+635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4862" style=3D"f=
+ont-weight:bold">From:</span></b> &quot;CharlesBinks-Collier.SylookHI M@ren=
+thero.cc&quot; &lt;CharlesBinks-Collier.SylookHI M@renthero.cc&gt;<br clear=
+=3D"none"> <b><span style=3D"font-weight:bold">To:</span></b> <a rel=3D"nof=
+ollow" shape=3D"rect" href=3D"mailto:grantmuck@rogers.com" target=3D"_blank=
+">grantmuck@rogers.com</a> <br clear=3D"none"> <b id=3D"m_13051283832181254=
+1m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537=
+1795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m=
+_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4866"><span id=3D"m_130=
+512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8=
+530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-873207=
+7782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4865" sty=
+le=3D"font-weight:bold">Sent:</span></b> Thursday, February 15, 2018 1:13 P=
+M<span><br clear=3D"none"> <b id=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000=
+yui_3_16_0_ym19_1_1518725096501_4868"><span id=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yi=
+v4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_16273=
+62460916606000yui_3_16_0_ym19_1_1518725096501_4867" style=3D"font-weight:bo=
+ld">Subject:</span></b> Re: RentHero Inquiry for <a rel=3D"nofollow" shape=
+=3D"rect" href=3D"https://maps.google.com/?q=3D115+Albert+Street,+Waterloo&=
+amp;entry=3Dgmail&amp;source=3Dg" target=3D"_blank">115 Albert Street, Wate=
+rloo</a><br clear=3D"none"> </span> </div></div></div><div><div class=3D"m_=
+130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m=
+_-8530391258315371795yiv4963481188h5"> <div class=3D"m_130512838321812541m_=
+-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537179=
+5yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_16=
+27362460916606000y_msg_container" id=3D"m_130512838321812541m_-376084348577=
+5849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496348118=
+8m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246091660=
+6000yui_3_16_0_ym19_1_1518725096501_4871"><br clear=3D"none"><div id=3D"m_1=
+30512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_=
+-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732=
+077782570635685m_1627362460916606000yiv1636045847"><div id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706=
+35685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4870"><span></spa=
+n><div dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_501048=
+4127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693=
+77256398yiv3616009277m_-8732077782570635685m_1627362460916606000yui_3_16_0_=
+ym19_1_1518725096501_4869">Hey Grant,<div id=3D"m_130512838321812541m_-3760=
+843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4=
+963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362=
+460916606000yui_3_16_0_ym19_1_1518725096501_4872"><br clear=3D"none"></div>=
+<div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564y=
+iv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv361=
+6009277m_-8732077782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725=
+096501_4873">Is it possible for us to tour earlier in the day, that would b=
+e best for us. If not 1:30 - 2:15 would be good anytime in there.</div><div=
+ id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71=
+76427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009=
+277m_-8732077782570635685m_1627362460916606000yui_3_16_0_ym19_1_15187250965=
+01_4874"><br clear=3D"none"></div><div id=3D"m_130512838321812541m_-3760843=
+485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963=
+481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460=
+916606000yui_3_16_0_ym19_1_1518725096501_4875">Charles</div></div><div clas=
+s=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176=
+427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv361600927=
+7m_-8732077782570635685m_1627362460916606000yiv1636045847yqt2459519133" id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277=
+m_-8732077782570635685m_1627362460916606000yiv1636045847yqt15302"><div clas=
+s=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176=
+427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv361600927=
+7m_-8732077782570635685m_1627362460916606000yiv1636045847gmail_extra" id=3D=
+"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764271=
+52m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-=
+8732077782570635685m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_487=
+6"><br clear=3D"none"><div class=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000=
+yiv1636045847gmail_quote" id=3D"m_130512838321812541m_-3760843485775849132m=
+_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944=
+238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yui_=
+3_16_0_ym19_1_1518725096501_4877"><span>On Thu, Feb 15, 2018 at 8:36 AM,  <=
+span dir=3D"ltr">&lt;<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:gran=
+t.muck@renthero.cc" target=3D"_blank">grant.muck@renthero.cc</a>&gt;</span>=
+ wrote:<br clear=3D"none"></span><blockquote class=3D"m_130512838321812541m=
+_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583153717=
+95yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1=
+627362460916606000yiv1636045847gmail_quote" id=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yi=
+v4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_16273=
+62460916606000yui_3_16_0_ym19_1_1518725096501_4880" style=3D"margin:0px 0px=
+ 0px 0.8ex;padding-left:1ex;border-left-color:rgb(204,204,204);border-left-=
+width:1px;border-left-style:solid"><div id=3D"m_130512838321812541m_-376084=
+3485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496=
+3481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246=
+0916606000yui_3_16_0_ym19_1_1518725096501_4879"><div id=3D"m_13051283832181=
+2541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831=
+5371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706356=
+85m_1627362460916606000yui_3_16_0_ym19_1_1518725096501_4878" style=3D"color=
+:rgb(0,0,0);font-family:Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-s=
+erif;font-size:13px;background-color:rgb(255,255,255)"><span></span><div id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277=
+m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995=
+888yui_3_16_0_ym19_1_1518700386974_7954"><span id=3D"m_130512838321812541m_=
+-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537179=
+5yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_16=
+27362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_15187=
+00386974_7953">Hi Charles, I am showing <a rel=3D"nofollow" shape=3D"rect" =
+href=3D"https://maps.google.com/?q=3D77+Seagram&amp;entry=3Dgmail&amp;sourc=
+e=3Dg" target=3D"_blank">77 Seagram</a> on Friday afternoon. Would you like=
+ to tour it ?=C2=A0 Albert is sold out.</span></div><div id=3D"m_1305128383=
+21812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912=
+58315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570=
+635685m_1627362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym=
+19_1_1518700386974_7955"><span><br clear=3D"none"></span></div><div id=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152=
+m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87=
+32077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yu=
+i_3_16_0_ym19_1_1518700386974_7957"><span id=3D"m_130512838321812541m_-3760=
+843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4=
+963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362=
+460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1518700386=
+974_7956">Let me know.</span></div><div id=3D"m_130512838321812541m_-376084=
+3485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496=
+3481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246=
+0916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_151870038697=
+4_7958"><span><br clear=3D"none"></span></div><div id=3D"m_1305128383218125=
+41m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583153=
+71795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685=
+m_1627362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1=
+518700386974_7960"><span id=3D"m_130512838321812541m_-3760843485775849132m_=
+5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442=
+38669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv16=
+36045847m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7959">Thanks,=
+ Grant.</span></div><div class=3D"m_130512838321812541m_-376084348577584913=
+2m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39=
+44238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yi=
+v1636045847m_-2812720693557995888qtdSeparateBR" id=3D"m_130512838321812541m=
+_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583153717=
+95yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1=
+627362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1518=
+700386974_7961"><br clear=3D"none"><br clear=3D"none"></div><div class=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152=
+m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87=
+32077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888ya=
+hoo_quoted" id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866937725639=
+8yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28=
+12720693557995888yui_3_16_0_ym19_1_1518700386974_7966" style=3D"display:blo=
+ck">  <div id=3D"m_130512838321812541m_-3760843485775849132m_50104841275003=
+69564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398=
+yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-281=
+2720693557995888yui_3_16_0_ym19_1_1518700386974_7965" style=3D"font-family:=
+Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:13px"> <d=
+iv id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv=
+7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv36160=
+09277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28127206935=
+57995888yui_3_16_0_ym19_1_1518700386974_7964" style=3D"font-family:Helvetic=
+aNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:16p=
+x"> <div dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_5010=
+484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866=
+9377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv163604=
+5847m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7963"> <font id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277=
+m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995=
+888yui_3_16_0_ym19_1_1518700386974_7962" face=3D"Arial" size=3D"2"> </font>=
+<hr size=3D"1"><div><div class=3D"m_130512838321812541m_-376084348577584913=
+2m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39=
+44238669377256398yiv3616009277m_-8732077782570635685h5"> <b><span style=3D"=
+font-weight:bold">From:</span></b> &quot;CharlesBinks-Collier. SylookHIM@re=
+nthero.cc&quot; &lt;CharlesBinks-Collier. SylookHIM@renthero.cc&gt;<br clea=
+r=3D"none"> <b><span style=3D"font-weight:bold">To:</span></b> <a rel=3D"no=
+follow" shape=3D"rect" href=3D"mailto:grantmuck@rogers.com" target=3D"_blan=
+k">grantmuck@rogers.com</a> <br clear=3D"none"> <b><span style=3D"font-weig=
+ht:bold">Sent:</span></b> Saturday, February 10, 2018 1:30 PM<br clear=3D"n=
+one"> <b id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369=
+564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yi=
+v3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28127=
+20693557995888yui_3_16_0_ym19_1_1518700386974_7968"><span id=3D"m_130512838=
+321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391=
+258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-873207778257=
+0635685m_1627362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_y=
+m19_1_1518700386974_7967" style=3D"font-weight:bold">Subject:</span></b> Re=
+: RentHero Inquiry for <a rel=3D"nofollow" shape=3D"rect" href=3D"https://m=
+aps.google.com/?q=3D115+Albert+Street,+Waterloo&amp;entry=3Dgmail&amp;sourc=
+e=3Dg" target=3D"_blank">115 Albert Street, Waterloo</a><br clear=3D"none">=
+  </div></div></div><div><div class=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685h5"> <div class=3D=
+"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764271=
+52m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-=
+8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888=
+y_msg_container" id=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377=
+256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847=
+m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7969"><br clear=3D"no=
+ne"><div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369=
+564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yi=
+v3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28127=
+20693557995888yiv5270610267"><div id=3D"m_130512838321812541m_-376084348577=
+5849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496348118=
+8m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246091660=
+6000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7971=
+"><div dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_501048=
+4127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693=
+77256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv16360458=
+47m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7970">Hi,<div id=3D=
+"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764271=
+52m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-=
+8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888=
+yui_3_16_0_ym19_1_1518700386974_7972">Can we see the house sometime this we=
+ek</div><div id=3D"m_130512838321812541m_-3760843485775849132m_501048412750=
+0369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693772563=
+98yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2=
+812720693557995888yui_3_16_0_ym19_1_1518700386974_7973"><br clear=3D"none">=
+</div></div><div class=3D"m_130512838321812541m_-3760843485775849132m_50104=
+84127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669=
+377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045=
+847m_-2812720693557995888yiv5270610267yqt7158372247" id=3D"m_13051283832181=
+2541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831=
+5371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706356=
+85m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267yqt2=
+7541"><div class=3D"m_130512838321812541m_-3760843485775849132m_50104841275=
+00369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256=
+398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-=
+2812720693557995888yiv5270610267gmail_extra" id=3D"m_130512838321812541m_-3=
+760843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795y=
+iv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627=
+362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1518700=
+386974_7974"><br clear=3D"none"><div class=3D"m_130512838321812541m_-376084=
+3485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496=
+3481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246=
+0916606000yiv1636045847m_-2812720693557995888yiv5270610267gmail_quote" id=
+=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764=
+27152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277=
+m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995=
+888yui_3_16_0_ym19_1_1518700386974_7975">On Mon, Feb 5, 2018 at 3:08 PM, Ch=
+arles Binks-Collier <span dir=3D"ltr">&lt;<a rel=3D"nofollow" shape=3D"rect=
+" href=3D"mailto:binkssam@gmail.com" target=3D"_blank">binkssam@gmail.com</=
+a>&gt;</span> wrote:<br clear=3D"none"><blockquote class=3D"m_1305128383218=
+12541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85303912583=
+15371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635=
+685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267gma=
+il_quote" id=3D"m_130512838321812541m_-3760843485775849132m_501048412750036=
+9564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398y=
+iv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2812=
+720693557995888yui_3_16_0_ym19_1_1518700386974_7977" style=3D"margin:0px 0p=
+x 0px 0.8ex;padding-left:1ex;border-left-color:rgb(204,204,204);border-left=
+-width:1px;border-left-style:solid"><div dir=3D"ltr" id=3D"m_13051283832181=
+2541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831=
+5371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706356=
+85m_1627362460916606000yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1=
+_1518700386974_7976">Hello,<div id=3D"m_130512838321812541m_-37608434857758=
+49132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m=
+_-3944238669377256398yiv3616009277m_-8732077782570635685m_16273624609166060=
+00yiv1636045847m_-2812720693557995888yui_3_16_0_ym19_1_1518700386974_7978">=
+<br clear=3D"none"></div><div>Could our group of 4, waiting to hear back fr=
+om our 5th, see the house on saturday.</div><span class=3D"m_13051283832181=
+2541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831=
+5371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706356=
+85m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267HOEn=
+Zb"><font color=3D"#888888"></font></span><div><br clear=3D"none"></div><di=
+v>Charles</div></div><div class=3D"m_130512838321812541m_-37608434857758491=
+32m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3=
+944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000y=
+iv1636045847m_-2812720693557995888yiv5270610267HOEnZb"><div class=3D"m_1305=
+12838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85=
+30391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077=
+782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270=
+610267h5"><div class=3D"m_130512838321812541m_-3760843485775849132m_5010484=
+127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866937=
+7256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv163604584=
+7m_-2812720693557995888yiv5270610267gmail_extra"><br clear=3D"none"><div cl=
+ass=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71=
+76427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009=
+277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557=
+995888yiv5270610267gmail_quote">On Mon, Feb 5, 2018 at 10:13 AM,  <span dir=
+=3D"ltr">&lt;<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:grant.muck@r=
+enthero.cc" target=3D"_blank">grant.muck@renthero.cc</a>&gt;</span> wrote:<=
+br clear=3D"none"><blockquote class=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267gmail_quote" style=3D"ma=
+rgin:0px 0px 0px 0.8ex;padding-left:1ex;border-left-color:rgb(204,204,204);=
+border-left-width:1px;border-left-style:solid"><div><div style=3D"color:rgb=
+(0,0,0);font-family:Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif=
+;font-size:13px;background-color:rgb(255,255,255)"><div dir=3D"ltr" id=3D"m=
+_130512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152=
+m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87=
+32077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yi=
+v5270610267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_151783742=
+2384_34674"><span>Hi Charles, How many in your group and when would you lik=
+e to tour?</span></div><div dir=3D"ltr" id=3D"m_130512838321812541m_-376084=
+3485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496=
+3481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246=
+0916606000yiv1636045847m_-2812720693557995888yiv5270610267m_693621142173831=
+3054m_1580761596083122031yui_3_16_0_1_1517837422384_34674"><span><br clear=
+=3D"none"></span></div><div dir=3D"ltr" id=3D"m_130512838321812541m_-376084=
+3485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv496=
+3481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_162736246=
+0916606000yiv1636045847m_-2812720693557995888yiv5270610267m_693621142173831=
+3054m_1580761596083122031yui_3_16_0_1_1517837422384_34674"><span>Grant.</sp=
+an></div><div class=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377=
+256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847=
+m_-2812720693557995888yiv5270610267m_6936211421738313054m_15807615960831220=
+31qtdSeparateBR" id=3D"m_130512838321812541m_-3760843485775849132m_50104841=
+27500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377=
+256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847=
+m_-2812720693557995888yiv5270610267m_6936211421738313054m_15807615960831220=
+31yui_3_16_0_1_1517837422384_34675"><br clear=3D"none"><br clear=3D"none"><=
+/div><div class=3D"m_130512838321812541m_-3760843485775849132m_501048412750=
+0369564yiv7176427152m_-8530391258315371795yiv4963481188m_-39442386693772563=
+98yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-2=
+812720693557995888yiv5270610267m_6936211421738313054m_1580761596083122031ya=
+hoo_quoted" id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866937725639=
+8yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28=
+12720693557995888yiv5270610267m_6936211421738313054m_1580761596083122031yui=
+_3_16_0_1_1517837422384_34680" style=3D"display:block">  <div id=3D"m_13051=
+2838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853=
+0391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777=
+82570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv52706=
+10267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_3=
+4679" style=3D"font-family:Helvetica Neue,Helvetica,Arial,Lucida Grande,san=
+s-serif;font-size:13px"> <div id=3D"m_130512838321812541m_-3760843485775849=
+132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-=
+3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000=
+yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1580=
+761596083122031yui_3_16_0_1_1517837422384_34678" style=3D"font-family:Helve=
+ticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:=
+16px"> <div dir=3D"ltr" id=3D"m_130512838321812541m_-3760843485775849132m_5=
+010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423=
+8669377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv163=
+6045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1580761596=
+083122031yui_3_16_0_1_1517837422384_34677"> <font id=3D"m_13051283832181254=
+1m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537=
+1795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m=
+_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267m_69362=
+11421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_34676" face=
+=3D"Arial" size=3D"2"> </font><hr size=3D"1"> <b><span style=3D"font-weight=
+:bold">From:</span></b> &quot;CharlesBinks-Collier.SylookHI M@renthero.cc&q=
+uot; &lt;CharlesBinks-Collier.SylookHI M@renthero.cc&gt;<br clear=3D"none">=
+ <b><span style=3D"font-weight:bold">To:</span></b> <a rel=3D"nofollow" sha=
+pe=3D"rect" href=3D"mailto:grantmuck@rogers.com" target=3D"_blank">grantmuc=
+k@rogers.com</a> <br clear=3D"none"> <b><span style=3D"font-weight:bold">Se=
+nt:</span></b> Sunday, February 4, 2018 3:22 PM<br clear=3D"none"> <b><span=
+ style=3D"font-weight:bold">Subject:</span></b> RentHero Inquiry for <a rel=
+=3D"nofollow" shape=3D"rect" href=3D"https://maps.google.com/?q=3D115+Alber=
+t+Street,+Waterloo&amp;entry=3Dgmail&amp;source=3Dg" target=3D"_blank">115 =
+Albert Street, Waterloo</a><br clear=3D"none">  </div> <div class=3D"m_1305=
+12838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-85=
+30391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077=
+782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270=
+610267m_6936211421738313054m_1580761596083122031y_msg_container" id=3D"m_13=
+0512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-=
+8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320=
+77782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv52=
+70610267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_151783742238=
+4_34681"><br clear=3D"none"><div id=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1=
+580761596083122031yiv7429770261">
+	=09
+	=09
+		 =20
+		   =20
+		   =20
+		 =20
+		  <div id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500369=
+564yiv7176427152m_-8530391258315371795yiv4963481188m_-3944238669377256398yi=
+v3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28127=
+20693557995888yiv5270610267m_6936211421738313054m_1580761596083122031yui_3_=
+16_0_1_1517837422384_34685">
+		  	<table id=3D"m_130512838321812541m_-3760843485775849132m_5010484127500=
+369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866937725639=
+8yiv3616009277m_-8732077782570635685m_1627362460916606000yiv1636045847m_-28=
+12720693557995888yiv5270610267m_6936211421738313054m_1580761596083122031yiv=
+7429770261bodyTable" width=3D"100%" height=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0"><tbody id=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1=
+580761596083122031yui_3_16_0_1_1517837422384_34684"><tr id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706=
+35685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267m=
+_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_34683">=
+<td align=3D"center" colspan=3D"1" rowspan=3D"1" valign=3D"top" id=3D"m_130=
+512838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8=
+530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-873207=
+7782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv527=
+0610267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384=
+_34682">
+		            <table id=3D"m_130512838321812541m_-3760843485775849132m_5010=
+484127500369564yiv7176427152m_-8530391258315371795yiv4963481188m_-394423866=
+9377256398yiv3616009277m_-8732077782570635685m_1627362460916606000yiv163604=
+5847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1580761596083=
+122031yiv7429770261emailContainer" width=3D"600" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"20"><tbody id=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1=
+580761596083122031yui_3_16_0_1_1517837422384_34691"><tr id=3D"m_13051283832=
+1812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125=
+8315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777825706=
+35685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267m=
+_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_34690" =
+style=3D"background-color:rgb(153,204,255)"><td align=3D"center" colspan=3D=
+"1" rowspan=3D"1" valign=3D"top" id=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1=
+580761596083122031yui_3_16_0_1_1517837422384_34689">
+		                        <table id=3D"m_130512838321812541m_-3760843485775=
+849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963481188=
+m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460916606=
+000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313054m_1=
+580761596083122031yiv7429770261emailBody" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"20"><tbody id=3D"m_130512838321812541m_-3760843=
+485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4963=
+481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362460=
+916606000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738313=
+054m_1580761596083122031yui_3_16_0_1_1517837422384_34688"><tr id=3D"m_13051=
+2838321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853=
+0391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-87320777=
+82570635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv52706=
+10267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_3=
+4687"><td align=3D"center" colspan=3D"1" rowspan=3D"1" valign=3D"top" id=3D=
+"m_130512838321812541m_-3760843485775849132m_5010484127500369564yiv71764271=
+52m_-8530391258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-=
+8732077782570635685m_1627362460916606000yiv1636045847m_-2812720693557995888=
+yiv5270610267m_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837=
+422384_34686" style=3D"color:rgb(51,122,183)">
+                                        <h2 id=3D"m_130512838321812541m_-37=
+60843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yi=
+v4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_16273=
+62460916606000yiv1636045847m_-2812720693557995888yiv5270610267m_69362114217=
+38313054m_1580761596083122031yui_3_16_0_1_1517837422384_34708">RentHero.ca =
+Inquiry</h2>
+                                    </td></tr><tr id=3D"m_13051283832181254=
+1m_-3760843485775849132m_5010484127500369564yiv7176427152m_-853039125831537=
+1795yiv4963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m=
+_1627362460916606000yiv1636045847m_-2812720693557995888yiv5270610267m_69362=
+11421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_34695"><td al=
+ign=3D"center" colspan=3D"1" rowspan=3D"1" valign=3D"top" id=3D"m_130512838=
+321812541m_-3760843485775849132m_5010484127500369564yiv7176427152m_-8530391=
+258315371795yiv4963481188m_-3944238669377256398yiv3616009277m_-873207778257=
+0635685m_1627362460916606000yiv1636045847m_-2812720693557995888yiv527061026=
+7m_6936211421738313054m_1580761596083122031yui_3_16_0_1_1517837422384_34694=
+" style=3D"color:rgb(51,122,183)">
+		                                    <h2 id=3D"m_130512838321812541m_-3760=
+843485775849132m_5010484127500369564yiv7176427152m_-8530391258315371795yiv4=
+963481188m_-3944238669377256398yiv3616009277m_-8732077782570635685m_1627362=
+460916606000yiv1636045847m_-2812720693557995888yiv5270610267m_6936211421738=
+313054m_1580761596083122031yui_3_16_0_1_1517837422384_34693"><a rel=3D"nofo=
+llow" shape=3D"rect" href=3D"https://maps.google.com/?q=3D115+Albert+Street=
+,+Waterloo&amp;entry=3Dgmail&amp;source=3Dg" target=3D"_blank">115 Albert S=
+treet, Waterloo</a></h2>
+		                                    <h3>Charles Binks-Collier sent a mess=
+age:</h3>
+		                                </td></tr><tr style=3D"border:1px solid r=
+ed"><td align=3D"center" colspan=3D"1" rowspan=3D"1" valign=3D"top">
+		                                    <div>When is a tour available</div>
+		                                </td></tr><tr><td align=3D"center" colspa=
+n=3D"1" rowspan=3D"1" valign=3D"top">
+		                                    <h3>You can respond to the tenant by =
+directly replying to this email.</h3>
+                                        <br clear=3D"none"><br clear=3D"non=
+e">
+                                        <h3>View your ad on <a rel=3D"nofol=
+low" shape=3D"rect" href=3D"https://renthero.ca/115-Albert" target=3D"_blan=
+k">https://renthero.ca/115-Albert</a></h3><span>
+                                        </span><h5>By using RentHero you ag=
+ree to our <a rel=3D"nofollow" shape=3D"rect" href=3D"https://renthero.ca/t=
+ermsandconditions" target=3D"_blank">terms of use</a></h5>
+		                                </td></tr></tbody></table>
+		                    </td></tr></tbody></table>
+		        </td></tr></tbody></table>
+		  </div>
+	=09
+=09
+</div><br clear=3D"none"><br clear=3D"none"></div> </div> </div>  </div></d=
+iv></div>
+</blockquote></div><br clear=3D"none"></div>
+</div></div></blockquote></div><br clear=3D"none"></div></div></div></div><=
+br clear=3D"none"><br clear=3D"none"></div> </div></div></div> </div>  </di=
+v></div></div>
+</blockquote></div><br clear=3D"none"></div></div></div></div><br clear=3D"=
+none"><br clear=3D"none"></div> </div></div></div> </div>  </div></div></di=
+v>
+</blockquote></div><br clear=3D"none"></div>
+</div></div></blockquote></div><br clear=3D"none"></div></div></div></div><=
+br clear=3D"none"><br clear=3D"none"></div> </div></div></div> </div>  </di=
+v></div></div>
+</blockquote></div><br clear=3D"none"></div></div></div></div><br clear=3D"=
+none"><br clear=3D"none"></div> </div></div></div> </div>  </div></div></di=
+v>
+</blockquote></div><br clear=3D"none"></div></div></div></div><br><br></div=
+> </div> </div>  </div></div></div>
+</blockquote></div><br></div>
+</div></div></blockquote></div><br></div>
+</div></div>
+
+--000000000000d80d39056f18d670--

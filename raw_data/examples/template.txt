@@ -1,0 +1,26 @@
+---CONTEXT---
+
+Landlord: "XXXXXXX"
+Medium: "YYYYY"
+
+---TENANT---
+
+
+
+---LANDLORD---
+
+
+
+---TENANT---
+
+
+
+---LANDLORD---
+
+
+
+---TENANT---
+
+
+
+---LANDLORD---

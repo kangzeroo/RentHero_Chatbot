@@ -1,0 +1,43 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Good Evening,
+A few girls and I were looking into your apartments and were wondering how much rent is and what it all includes.
+
+Thank you,
+Laura Winters
+
+---LANDLORD---
+
+Hi Laura
+Our 5 Bedroom units range in price from $500-$535 per month.
+Each Unit is slightly different, 2 of the units have everything included except parking.
+The other one does not include hydro.
+Internet is included and ensuite laundry as well as 2 bathrooms per unit.
+Let me know when you are available and we can book a viewing.
+Thank you
+Jody
+
+---TENANT---
+
+Sorry is this for the viewing of 85 Seagrams drive?
+
+---LANDLORD---
+
+ok sorry.
+yes we can still do Thursday at 5pm
+
+---TENANT---
+
+Yes that works! So at 5 on Thursday at 85 Seagrams drive right?
+
+Thank you,
+Laura Winters
+
+---LANDLORD---
+
+yes

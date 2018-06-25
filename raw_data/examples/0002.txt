@@ -1,0 +1,34 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Good afternoon,
+
+I have a tour booked for this evening at 6 pm. My group and I were wondering if there's any chance we could have it moved to tomorrow (November 16) at 6 pm. Only 2 people from our group would be able to make it tonight.
+
+Please let me know!
+
+Thanks,
+
+Monica
+
+---LANDLORD---
+
+Hi Monica
+We will need to reschedule for a later date.
+The owner has not confirmed September vacancies.
+Thank you
+Jody
+
+---TENANT---
+
+Hello Jody,
+
+I already spoke with someone on the phone and I have an appointment set up for tomorrow at 6 pm to have a tour of the building.
+
+Please advise
+
+Monica

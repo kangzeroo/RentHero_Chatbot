@@ -1,0 +1,29 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello! I am a group of 2 looking for a unit with all females! I am interested in this and wondering if there are furnishing options?
+
+---LANDLORD---
+
+I have one unit with one female
+Already signed.
+
+---TENANT---
+
+would we be able to join her?
+
+---LANDLORD---
+
+Let me check tomorrow when I'm in the office.
+I'll text you tomorrow.
+Can you email me your phone number.
+Thank you
+Jody
+
+---TENANT---
+
+6474552229

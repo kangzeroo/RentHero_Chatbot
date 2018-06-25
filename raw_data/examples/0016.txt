@@ -1,0 +1,41 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I'm interested in this property! Please contact me.
+
+---LANDLORD---
+
+Would you be available today for a viewing
+
+---TENANT---
+
+Hello I am not from the area. Please tell me how close this place is to Duke St. D/Town Kitchener. I will be attending at the campus of the former Jerome high school campus. MSW faculty.
+
+Debra Ross
+The world is your canvas
+
+---LANDLORD---
+
+158 Erb will be closer
+
+---TENANT---
+
+Do you have a room at this location. What is the price/prices.
+
+Debra Ross
+The world is your canvas
+
+---LANDLORD---
+
+Yes. $450
+
+---TENANT---
+
+I am sorry. This is in Waterloo. I am attending WLU, Kitchener campus. 120 Duke St. W.
+
+Debra Ross
+The world is your canvas

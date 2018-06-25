@@ -1,0 +1,45 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I'm a recent college graduate, and I'm interested in this room I'd like to set up a viewing at the soonest date possible. Thanks, Brad.
+
+---LANDLORD---
+
+Tomorrow at 1:30pm?
+Jody
+
+---TENANT---
+
+Could you do 1 instead? I have work at 3 and I bus so I don't wanna be late.
+
+---LANDLORD---
+
+Sure
+
+---TENANT---
+
+Hello. Just wanting to make sure 1pm today for the viewing is still a go.
+
+---LANDLORD---
+
+Yes
+
+---TENANT---
+
+I'm at the location
+
+---LANDLORD---
+
+Hi, could I have the lease agreement? I'm very certain I wanna rent the room.
+
+---TENANT---
+
+Hi Brad.
+Sorry super busy today.
+I will send it to you first thing in the morning.
+Thank you
+Jody

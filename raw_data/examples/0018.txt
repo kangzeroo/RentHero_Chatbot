@@ -1,0 +1,45 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Would you consider doing an 8 month lease? We are a group of upper year engineering students looking to rent for our final year of school.
+
+---LANDLORD---
+
+Hi Holly
+How many people in your group?
+Thank you
+Jody
+
+---TENANT---
+
+Hello,
+
+
+We have 3 confirmed for sure (2 females and 1 male), and two that are considering but not yet committed!
+
+---LANDLORD---
+
+I have one co-ed unit that we can place
+4 people in at 16 Columbia.
+Leases are 1year.
+Thank you
+Jody
+
+---TENANT---
+
+Hello,
+
+
+Unfortunately that won't work. Do any of your properties accommodate 8 month leases?
+
+
+---LANDLORD---
+
+No, sorry Holly the owners want 1year leases.
+Most students sublet the summer months.
+Thank you
+Jody

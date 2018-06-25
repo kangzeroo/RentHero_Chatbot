@@ -1,0 +1,14 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, Is this unit still available? If so, is there a possibility of doing a 4 month lease term for the fall?
+
+---LANDLORD---
+
+Hi
+Yes it is available. No, we do not do 4 month leases.
+Jody

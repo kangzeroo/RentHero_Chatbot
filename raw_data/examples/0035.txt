@@ -1,0 +1,36 @@
+---CONTEXT---
+
+Landlord: "Kangze"
+Medium: "SMS"
+
+---TENANT---
+
+I would like to take a tour asap
+
+---LANDLORD---
+
+Hi Chongwei, The tour for tomorrow at 3pm will have to be cancelled for the time being. We're waiting on the confirmation from the landlord. We will contact you as soon as the landlord gets back to us. We thank you for your understanding and apologize if this causes any inconvenience.
+
+---TENANT---
+
+OK
+
+---TENANT---
+
+I am sorry, when I can know the time of visiting
+
+---LANDLORD---
+
+As soon as the landlord contacts me back, I will get back to you. I will book the earliest date available.
+
+---TENANT---
+
+👌🏻
+
+---LANDLORD---
+
+Your appointment has been booked to see UPlus on February 23rd at 3PM.
+
+---TENANT---
+
+I am sorry, I need to go to Toronto on February 23rd. So I may not come back at that time. Can I visit the apartment earlier on tomorrow or anytime on 24th?

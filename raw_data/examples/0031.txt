@@ -1,0 +1,22 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi there,
+
+Can you please tell me if these are student apartments?
+
+Thank you,
+
+Simonne
+
+---LANDLORD---
+
+Good Morning Simonne
+The Apartment at 158 Erb is multi-use.
+We have Students, Families and Individual room rentals.
+Thank you
+Jody

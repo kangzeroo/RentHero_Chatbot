@@ -1,0 +1,94 @@
+---CONTEXT---
+
+Landlord: "Kangze"
+Medium: "SMS"
+
+---TENANT---
+
+Hey there, I was wondering if you could give me more information? Me and a group of my friends (total 3) want to live here and sign the lease ASAP. Just wondering how it'll work and when we can come and sign the lease? Thank you, Mehul Adlakha
+
+---LANDLORD---
+
+Hello, 18 James is 5 bedrooms so you will need to have an additional 2 roommates. We have several tours this week if you would like to tag in.
+
+---TENANT---
+
+Ah okok, and what would be the prices?
+
+---TENANT---
+
+If you can give a specific price that'll be great
+
+---LANDLORD---
+
+As per the latest records on renthero, it is $675/month all inclusive. This may differ if the landlord has updated prices.
+
+---TENANT---
+
+Oh okok
+
+---LANDLORD---
+
+Do you think you can find another 2 roommates? The same requirement applies to Preston house
+
+---TENANT---
+
+Oh uhh I'll try it'll just be a little difficuly
+
+---TENANT---
+
+Hey, I have 5 people now and want to book s 5 bedroom apartment w en suite washrooms ASAPA
+
+---TENANT---
+
+ASAP*
+
+---TENANT---
+
+Please let me know how to go about thos
+
+---TENANT---
+
+This*
+
+---LANDLORD---
+
+For sure, we can take a look at 18 James and Preston House. We will book tours asap, landlords need to give tenants 24h notice so earliest is Saturday
+
+---TENANT---
+
+I'm leaning more towards 18 James. Can you please find out the updated price? I want to make sure that I can afford it because if it's over $700 I might be a little iffy.
+
+---LANDLORD---
+
+I will find out the full price for you and let you know. In the meantime the tour has been scheduled
+
+---TENANT---
+
+Could you reschedule for Monday? One of the students aren't free on Saturday.
+
+---LANDLORD---
+
+Yes for sure, what time works well on Monday?
+
+---TENANT---
+
+After 4
+
+---TENANT---
+
+And please do tell me the price beforehand though.
+
+---TENANT---
+
+Hey could you tell 18 James to call us so we can figure out the pricing and tor like that?
+
+---TENANT---
+
+tour*
+
+---LANDLORD---
+
+Hello Mehul, the staff for 18 James are bit understaffed this week (just got back from vacation). They have granted me access to their internal company documents to get the price information for you. I will have that to you shortly (it's in Chinese, so I'm having someone translate it asap)
+
+---TENANT---

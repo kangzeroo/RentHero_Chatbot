@@ -1,0 +1,12 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Is this student housing ?
+
+---LANDLORD---
+
+Yes

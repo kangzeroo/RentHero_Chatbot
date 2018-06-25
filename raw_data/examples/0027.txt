@@ -1,0 +1,12 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I'm wondering if this room is still available. Thank you Nicole
+
+---LANDLORD---
+
+Yes when are you available to see it?

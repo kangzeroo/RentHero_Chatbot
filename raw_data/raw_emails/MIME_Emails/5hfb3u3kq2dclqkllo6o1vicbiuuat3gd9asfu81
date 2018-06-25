@@ -1,0 +1,349 @@
+Return-Path: <admin@renthero.com>
+Received: from mail-lf0-f43.google.com (mail-lf0-f43.google.com [209.85.215.43])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id 5hfb3u3kq2dclqkllo6o1vicbiuuat3gd9asfu81
+ for test@myrenthelper.com;
+ Wed, 20 Jun 2018 20:07:22 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: none (spfCheck: 209.85.215.43 is neither permitted nor denied by domain of renthero.com) client-ip=209.85.215.43; envelope-from=admin@renthero.com; helo=mail-lf0-f43.google.com;
+Authentication-Results: amazonses.com;
+ spf=none (spfCheck: 209.85.215.43 is neither permitted nor denied by domain of renthero.com) client-ip=209.85.215.43; envelope-from=admin@renthero.com; helo=mail-lf0-f43.google.com;
+ dkim=pass header.i=@renthero-com.20150623.gappssmtp.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFFMWxHdE8zUk5vbmJJSlB1ZVExczJlK2VQZ1doYUluMmZmSStqMGtWTzNqUjdzeHJXbEZJdlVhcFlDTW1SSjFPWmVhZXJEc3FlekdKNjEyTkRSSjZOTGZUQ1lnK1pkR3A3QkNVSUNjT3A3OUFRdk52VDI5ZkpxNDZ3RXMvSGxpdk1TUHhMVWJsTTBNU3NKVmgyZU8xOTRoZGkvZXk5M3FUMnBTL2QrZWRnUmVMUzVyT09UekxhclNtS2IzZWp3UzJORHF1WncwZFVFSWg4Vi9nVGdDZHY0dlgzM0dwMHlvQmsvYWVsM2VhTDdlYVJHY21PamdISDI4WFdNZlZ5TjJsK0dGZTlsSWdicTZWZ0JqRmRYdnptaDlOUDlqdk1wUUMrWW5IQjZ6d1pDWHc9PQ==
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=JiCzZVs7SMnQiiLSGwOSufHtD3PUQtnEtghqi3Y+8AU5Y7t40FoAXor+dmENN1AJzmSLbdRDOYv22eOiZK4ggKYZ+2COw+7WWaN3ln7hYITh/DGKgmN5KfPbTVOOMipyfrkPhEch3TOiBU6zCRIOSDp0NDzpiagV/IKLPQJ24Yc=; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1529525246; v=1; bh=nSWt2PSbBm0SheSuMAaMpnfmGjLTTV0L/qV9uAClR7A=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-lf0-f43.google.com with SMTP id i15-v6so1186322lfc.2
+        for <test@myrenthelper.com>; Wed, 20 Jun 2018 13:07:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=renthero-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=g9+KCvQAg7PoIY0cU8HpeygQoKXZ0bruNfY77SNwkEs=;
+        b=gE76GYvhO5S+H7ykSUflWOIfgvfIWGxg4LYxQzNKX2W92F0wsF1abD2BMDnmwEXr1W
+         M9epBVGg0i9MiKeg3EyWTSNL0T40iktS+Z8uULiDAqCv4v+aqJWOe7MDhBlDTA1czXj6
+         5CrUPXa5CPieWk3QRlxrh0qZ//Vs8hsaN+dI4iZnUMF+WQwfRvJuaUhQa3kEaCyI3X1i
+         EVZ+/NSX9xiKl2Cak85ZShz00gFQ1Dvm4HqgJNlSpVnJUk9FsbNbtvmScseRF2qFtJvJ
+         hrgsGcSTLOith1BzXOXiSQQxq3CfMs6zs9oxcbz6pgNt8xLM4YbXEdbPsJGF4/eUoW97
+         GaWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=g9+KCvQAg7PoIY0cU8HpeygQoKXZ0bruNfY77SNwkEs=;
+        b=hHhp+JZ+m2V8W/zTbfZU9TZQcUB+p2/NC7nSVotUq37uIUvQS5g22G6dFWkf5g2qwr
+         //AjnH3lgGzSxM4Jg/ntcZQwrYXwJhv4o5Zfnq3gvM9LYpGb7fEXPctJm+JdKFN4ZHrs
+         YsqCEkBhjjvxLI7ODdP0b6z+1giS0a6r4mq1xpq/yZAR1WJFfiaAUTRD4EEpPLnrEOpJ
+         OoToQnyT4mZcuWppOfE8Dypy1xgTK8r0GbwqUIWuYbyKykUItCJxBRTNN0gHDOy9A4GZ
+         VM5Q8HE5GBUrG48UzJpU11J9kTOlj8l665uiPDQv1H/pbnutbTEhve/HcoxvQEHm9jy4
+         Qt/w==
+X-Gm-Message-State: APt69E0wWzMpxino4J8VTFnqWyKat/LXXop+kZb/AXe38IAdGX0Yknsu
+	j0hIZEnsVbh3oZy098jftJmTwu95w2sxjITMwPhpPQ2e
+X-Google-Smtp-Source: ADUXVKKGmnqYAirKOJDJS7nBg+6yQqDpui2p0w8wlPu4RiSvkh+KoNtJanG/clL6YhNsFXdKYTlKiVU2MeZoQGkqKWg=
+X-Received: by 2002:a2e:741:: with SMTP id i1-v6mr14737901ljd.87.1529525240667;
+ Wed, 20 Jun 2018 13:07:20 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 2002:a19:5007:0:0:0:0:0 with HTTP; Wed, 20 Jun 2018 13:07:19
+ -0700 (PDT)
+X-Originating-IP: [208.72.125.2]
+In-Reply-To: <CABQVo9-uAvkth0eeo_gZtc12gyNZKu5co4z7mFQ=kK3gX68wyA@mail.gmail.com>
+References: <mj4aw67famjx1zn44ojmylqz5sdsxbeoxb8pxhldlbv0ilcp8rv@rts.kijiji.ca>
+ <0B0E7D14-F497-49F8-BF8E-6ADEAD00BDE9@gmail.com> <CABQVo9-uAvkth0eeo_gZtc12gyNZKu5co4z7mFQ=kK3gX68wyA@mail.gmail.com>
+From: RentHero Admin <admin@renthero.com>
+Date: Wed, 20 Jun 2018 16:07:19 -0400
+Message-ID: <CAHSKJ1jxnhcezcZKbV8NPoKRswz3MdvP-mUv15Mknksd3e52gw@mail.gmail.com>
+Subject: Fwd: Reply to your "16 Columbia Furnished" Ad on Kijiji
+To: test@myrenthelper.com
+Content-Type: multipart/alternative; boundary="000000000000a53086056f185863"
+
+--000000000000a53086056f185863
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ----------
+From: Turn Key Management <rent@turnkeymanagement.ca>
+Date: Fri, Jun 15, 2018 at 2:52 PM
+Subject: Fwd: Reply to your "16 Columbia Furnished" Ad on Kijiji
+To: admin@renthero.com
+
+
+
+*Regards,*
+ALEXEY | LEASE ADMINISTRATOR
+
+<rent@turnkeymanagement.ca>   <http://turnkeymanagement.ca/>
+<https://www.facebook.com/turn.key.property.management.inc/?fref=3Dts>
+<https://twitter.com/TurnkeyMGT>   <https://www.instagram.com/turnkeymgt/>
+
+*"This email and any files transmitted with it are confidential and
+intended solely for the use of the individual or entity to whom they are
+addressed. If you are not the named addressee you should not disseminate,
+distribute or copy this e-mail. Please notify the sender immediately by
+e-mail if you have received this e-mail by mistakes and delete this e-mail
+from your system. This e-mail and any attachments are believed to be free
+of any virus or defect, but it is the responsibility of the recipient to
+ensure this. E-mail transmissions cannot be guaranteed to be secure or
+error free, as such transmission could be intercepted, corrupted, lost,
+destroyed, arrive late or incomplete, or contain viruses. The sender does
+not accept liability for any loss or damaged arising in any way from its
+receipt or use for any errors or omissions in it's contents whether such
+may arise as a result of its transmission or otherwise"*
+
+
+---------- Forwarded message ---------
+From: TurnKey Management <rentturnkeymanagement@gmail.com>
+Date: Tue, Oct 17, 2017 at 11:32 AM
+Subject: Re: Reply to your "16 Columbia Furnished" Ad on Kijiji
+To: <siddonfamily@bmts.com>
+
+
+Yes
+
+Sent from my iPhone
+
+On Oct 17, 2017, at 11:29 AM, Kijiji Reply (from Vickie) <post@kijiji.ca>
+wrote:
+
+Hello! The following is a reply to your "16 Columbia Furnished
+<http://www.kijiji.ca/v-room-rental-roommate/kitchener-waterloo/16-columbia=
+-furnished/1302530046>"
+Ad on Kijiji:
+
+*From:* Vickie(siddonfamily@bmts.com)
+Is this student housing ?
+*You can respond to "Vickie(siddonfamily@bmts.com <siddonfamily@bmts.com>)"
+by replying to this email.*
+
+Other options:
+
+
+   - Want more replies? Promote your ad
+   <http://www.kijiji.ca/c-PromoteMyAds> through My Kijiji
+   - Ad no longer relevant? Delete your ad
+   <http://www.kijiji.ca/c-EndAdWarn?AdId=3D1302530046> from the original
+   Manage My Ads email or from Kijiji.
+
+
+
+*Important Kijiji Safety Notice:*
+
+   - Take steps to make your Kijiji transactions as secure as possible by
+   following our suggested safety tips. Read our Safety Tips
+   <https://help.kijiji.ca/helpdesk/safety/>.
+   - Never click links in an email that ask you to sign in to Kijiji. All
+   "Your Kijiji account has expired" emails are fakes.
+   - PayPal transactions made through the Kijiji app qualify for PayPal=E2=
+=80=99s
+   Seller Protection. Kijiji, Ebay and Paypal do not offer buyer protection
+   for Kijiji items. See terms
+   <https://www.paypal.com/ca/webapps/mpp/ua/kijiji-tnc?locale.x=3Den_CA>.
+
+------------------------------
+Help <https://help.kijiji.ca/helpdesk/> About
+<http://kijijiblog.ca/about-us/> Privacy Policy
+<https://help.kijiji.ca/helpdesk/policies/kijiji-privacy-policy> Terms of
+Use <https://help.kijiji.ca/helpdesk/policies/kijiji-terms-of-use> Contact
+Kijiji <https://help.kijiji.ca/helpdesk/email-us/>
+=C2=A9 2017 eBay International AG.
+Operated by: Kijiji Canada Ltd. | 500 King Street West, Suite 200 |
+Toronto, Ontario | M5V 1L9 | Canada
+<https://maps.google.com/?q=3D500+King+Street+West,+Suite+200+%7C+Toronto,+=
+Ontario+%7C+M5V+1L9+%7C+Canada&entry=3Dgmail&source=3Dg>
+
+--000000000000a53086056f185863
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div class=3D"gmail_quote">---------- Forwarded messag=
+e ----------<br>From: <b class=3D"gmail_sendername">Turn Key Management</b>=
+ <span dir=3D"ltr">&lt;<a href=3D"mailto:rent@turnkeymanagement.ca">rent@tu=
+rnkeymanagement.ca</a>&gt;</span><br>Date: Fri, Jun 15, 2018 at 2:52 PM<br>=
+Subject: Fwd: Reply to your &quot;16 Columbia Furnished&quot; Ad on Kijiji<=
+br>To: <a href=3D"mailto:admin@renthero.com">admin@renthero.com</a><br><br>=
+<br><div dir=3D"ltr"><div style=3D"font-family:tahoma,sans-serif;font-size:=
+small"><br clear=3D"all"></div><div><div dir=3D"ltr" class=3D"m_65464583133=
+20648658gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr=
+"><div><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr">=
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div=
+ dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D=
+"ltr"><div><div><span style=3D"color:rgb(51,51,51)"><font face=3D"arial, he=
+lvetica, sans-serif" size=3D"2"><b>Regards,</b></font></span></div><div><sp=
+an style=3D"color:rgb(153,153,153);font-family:arial,helvetica,sans-serif;f=
+ont-size:x-small">ALEXEY</span><font face=3D"arial, helvetica, sans-serif">=
+<font color=3D"#999999" size=3D"2">=C2=A0|=C2=A0</font></font><span style=
+=3D"color:rgb(153,153,153);font-size:x-small;font-family:arial,helvetica,sa=
+ns-serif">LEASE ADMINISTRATOR</span></div></div><div dir=3D"ltr"><img src=
+=3D"https://farm8.staticflickr.com/7352/27289427790_57ea03f4f9_b.jpg"><br><=
+/div><div dir=3D"ltr"><a href=3D"mailto:rent@turnkeymanagement.ca" target=
+=3D"_blank"><img src=3D"https://farm2.staticflickr.com/1630/25187055863_c8b=
+4fdf78a_s.jpg"></a>=C2=A0=C2=A0<a href=3D"http://turnkeymanagement.ca/" tar=
+get=3D"_blank"><img src=3D"https://farm2.staticflickr.com/1459/25183167164_=
+23dda6e853_s.jpg" style=3D"font-size:12.8px"></a>=C2=A0=C2=A0<a href=3D"htt=
+ps://www.facebook.com/turn.key.property.management.inc/?fref=3Dts" target=
+=3D"_blank"><img src=3D"https://farm2.staticflickr.com/1537/25718567871_540=
+7223d83_s.jpg" style=3D"font-size:12.8px"></a>=C2=A0=C2=A0<a href=3D"https:=
+//twitter.com/TurnkeyMGT" target=3D"_blank"><img src=3D"https://farm2.stati=
+cflickr.com/1513/25692707262_50665f163d_s.jpg" style=3D"font-size:12.8px"><=
+/a>=C2=A0=C2=A0<a href=3D"https://www.instagram.com/turnkeymgt/" target=3D"=
+_blank"><img src=3D"https://farm2.staticflickr.com/1464/25787697846_0419fd2=
+272_s.jpg" style=3D"font-size:12.8px"></a><br></div><div><font size=3D"1" f=
+ace=3D"times new roman, serif" color=3D"#666666"><i>&quot;This email and an=
+y files transmitted with it are confidential and intended solely for the us=
+e of the individual or entity to whom they are addressed. If you are not=C2=
+=A0the named=C2=A0addressee you should not disseminate, distribute or copy =
+this e-mail. Please notify the sender=C2=A0immediately by e-mail if you hav=
+e received this e-mail by mistakes and delete this e-mail from your system.=
+ This e-mail and any attachments are believed to be free of any virus or de=
+fect, but it is the responsibility of the recipient to ensure this. E-mail =
+transmissions cannot be guaranteed to be secure or error free, as such tran=
+smission could be=C2=A0intercepted,=C2=A0corrupted, lost, destroyed,=C2=A0a=
+rrive=C2=A0late or incomplete, or contain viruses. The sender does not acce=
+pt liability for any loss or damaged arising in any way from its receipt or=
+ use for any errors or omissions in it&#39;s contents whether such may aris=
+e as a result of its transmission or otherwise&quot;<br></i></font></div></=
+div></div></div></div></div></div></div></div></div></div></div></div></div=
+></div></div></div></div></div></div></div></div></div></div></div></div></=
+div><br><br><div class=3D"gmail_quote"><div dir=3D"ltr">---------- Forwarde=
+d message ---------<br>From: <strong class=3D"gmail_sendername" dir=3D"auto=
+">TurnKey Management</strong> <span dir=3D"ltr">&lt;<a href=3D"mailto:rentt=
+urnkeymanagement@gmail.com" target=3D"_blank">rentturnkeymanagement@gmail.<=
+wbr>com</a>&gt;</span><br>Date: Tue, Oct 17, 2017 at 11:32 AM<br>Subject: R=
+e: Reply to your &quot;16 Columbia Furnished&quot; Ad on Kijiji<br>To:  &lt=
+;<a href=3D"mailto:siddonfamily@bmts.com" target=3D"_blank">siddonfamily@bm=
+ts.com</a>&gt;<br></div><br><br><div dir=3D"auto">Yes<br><br><div id=3D"m_6=
+546458313320648658m_1101426434666587436AppleMailSignature">Sent from my iPh=
+one</div><div><br>On Oct 17, 2017, at 11:29 AM, Kijiji Reply (from Vickie) =
+&lt;<a href=3D"mailto:post@kijiji.ca" target=3D"_blank">post@kijiji.ca</a>&=
+gt; wrote:<br><br></div><blockquote type=3D"cite"><div>
+
+    Hello! The following is a reply to your &quot;<a href=3D"http://www.kij=
+iji.ca/v-room-rental-roommate/kitchener-waterloo/16-columbia-furnished/1302=
+530046" target=3D"_blank">16 Columbia Furnished</a>&quot; Ad on Kijiji:
+    <br>
+<br>
+   =20
+<table border=3D"1" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+   =20
+<tbody>
+<tr>
+       =20
+<td>
+           =20
+<table border=3D"0" cellpadding=3D"8" cellspacing=3D"0" width=3D"100%">
+               =20
+<tbody>
+<tr>
+                   =20
+<td align=3D"left" bgcolor=3D"#eeeeee" width=3D"100%">
+                        <strong>From:</strong>
+                        Vickie(<a href=3D"mailto:siddonfamily@bmts.com" tar=
+get=3D"_blank">siddonfamily@bmts.com</a>)
+                    </td>
+               =20
+</tr>
+                               =20
+<tr>
+                   =20
+<td>
+                        Is this student housing ?
+                    </td>
+               =20
+</tr>
+           =20
+</tbody>
+</table>
+       =20
+</td>
+   =20
+</tr>
+
+</tbody>
+</table>
+
+<br>
+<strong>You can respond to &quot;Vickie(<a href=3D"mailto:siddonfamily@bmts=
+.com" target=3D"_blank">siddonfamily@bmts.com</a>)<wbr>&quot; by replying t=
+o this email.</strong>
+           =20
+<br>
+<br>
+        Other options:
+        <br>
+<br>
+       =20
+<ul>
+                           =20
+<li>Want more replies? <a href=3D"http://www.kijiji.ca/c-PromoteMyAds" targ=
+et=3D"_blank">Promote your ad</a> through My Kijiji</li>
+               =20
+<li>Ad no longer relevant? <a href=3D"http://www.kijiji.ca/c-EndAdWarn?AdId=
+=3D1302530046" target=3D"_blank">Delete your ad</a> from the original Manag=
+e My Ads email or from Kijiji.</li>
+                   =20
+</ul>
+   =20
+<br>
+<br>
+
+<b><font color=3D"#ff0000">Important Kijiji Safety Notice:</font></b>
+
+<ul>
+   =20
+<li>Take steps to make your Kijiji transactions as secure as possible by fo=
+llowing our suggested safety tips. <a href=3D"https://help.kijiji.ca/helpde=
+sk/safety/" target=3D"_blank">Read our Safety Tips</a>.</li>
+   =20
+<li>Never click links in an email that ask you to sign in to Kijiji. All &q=
+uot;Your Kijiji account has expired&quot; emails are fakes.</li>
+   =20
+<li>PayPal transactions made through the Kijiji app qualify for PayPal=E2=
+=80=99s Seller Protection. Kijiji, Ebay and Paypal do not offer buyer prote=
+ction for Kijiji items.=C2=A0<a href=3D"https://www.paypal.com/ca/webapps/m=
+pp/ua/kijiji-tnc?locale.x=3Den_CA" target=3D"_blank">See terms</a>.</li>
+
+</ul>
+
+
+
+
+<div class=3D"m_6546458313320648658m_1101426434666587436p">
+   =20
+<hr color=3D"#CCCCCC" noshade size=3D"1">
+
+</div>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"650">
+   =20
+<tbody>
+<tr>
+       =20
+<td>
+            <a href=3D"https://help.kijiji.ca/helpdesk/" target=3D"_blank">=
+Help</a>
+            <a href=3D"http://kijijiblog.ca/about-us/" target=3D"_blank">Ab=
+out</a>
+            <a href=3D"https://help.kijiji.ca/helpdesk/policies/kijiji-priv=
+acy-policy" target=3D"_blank">Privacy Policy</a>
+            <a href=3D"https://help.kijiji.ca/helpdesk/policies/kijiji-term=
+s-of-use" target=3D"_blank">Terms of Use</a>
+            <a href=3D"https://help.kijiji.ca/helpdesk/email-us/" target=3D=
+"_blank">Contact Kijiji</a>
+           =20
+<br>=C2=A9 2017 eBay International AG.
+            <br>Operated by: Kijiji Canada Ltd. | <a href=3D"https://maps.g=
+oogle.com/?q=3D500+King+Street+West,+Suite+200+%7C+Toronto,+Ontario+%7C+M5V=
++1L9+%7C+Canada&amp;entry=3Dgmail&amp;source=3Dg">500 King Street West, Sui=
+te 200 | Toronto, Ontario | M5V 1L9 | Canada</a>
+        </td>
+   =20
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+</div></blockquote></div></div></div>
+</div><br></div>
+
+--000000000000a53086056f185863--

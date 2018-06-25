@@ -1,0 +1,39 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello my name is Melissa Nadarajah. I'm just wondering when are we moving into 55 Columbia, waterloo. I believe its unit 1. It'll be me and 4 other girls. We also still don't know the details of how much we are paying monthly exactly and what utilities we have and don't have.
+- Melissa Nadarajah
+
+---LANDLORD---
+
+Hi Melissa
+Your lease says you are in Unit 1 Room 4
+You are paying $535 per month, utilities are included.
+Do you need furniture?
+Thank you
+Jody
+
+---TENANT---
+
+Perfect. Is the furniture extra? And when are we able to move in?
+
+- Melissa Nadarajah
+
+---LANDLORD---
+
+Yes furniture is extra.
+Move In dates will be emailed next week
+Thank you
+Jody
+
+---LANDLORD---
+
+Hi Melissa
+We do not have your Pre-Authorized Debt form.
+Please see attached.
+Thank you
+Jody

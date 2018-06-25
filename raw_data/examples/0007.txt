@@ -1,0 +1,42 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello,
+
+We are 3-4 UWaterloo students admitted fall 2017 and are looking for an accommodation. Came across '150 Erb St E, Waterloo, ON N2J 1M4, Canada' on Kijiji.
+
+Is this property still available ?
+If yes, please let us know the cost if we want our bedrooms, living room and kitchen to be furnished.
+
+Thanks and Regards,
+Nikhil Swatantra
+919646965660
+
+---LANDLORD---
+
+Hi Nikhil
+Is it 3 or 4 people?
+I have a couple of properties that will work for you.
+Thank you
+Jody
+
+---TENANT---
+
+Hello,
+
+Thanks for your response.
+
+We are 4 people looking for an accommodation with cost under $450 including utilities and furnishings.
+
+Kindly let us know if you have the property in this range.
+
+---LANDLORD---
+
+Hi Nikhil
+Unfortunately, we currently do no have anything that will suit your budget.
+Very best
+Jody

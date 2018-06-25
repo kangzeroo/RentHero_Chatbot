@@ -1,0 +1,31 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hi, I'm interested in this property! I'm wondering how many bedrooms are in the apartment and if the other tenants are students. Thanks Kash
+
+---LANDLORD---
+
+Hi Kash
+It is a 5 bedroom unit the current resident
+Is a recent Masters Grad from Carlton
+Let me know if you'd like to see the unit
+Jody
+
+---TENANT---
+
+Thanks for the info, Jody. Are the units furnished? and are the utilities (hydro, water, gas, internet) included? Also, the listing on Kijji mentioned something about promotions being available, just wondering what are they?
+
+Thanks
+Kash
+
+---LANDLORD---
+
+Yes bedrooms are furnished.
+Two bathrooms ensuite laundry
+Internet is included, hydro is extra
+Usually 15 dollars per person per month.
+Jody

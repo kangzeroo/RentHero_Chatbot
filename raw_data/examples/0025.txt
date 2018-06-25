@@ -1,0 +1,24 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello, my name is Natasha and I am a housing coordinator currently looking to fill units for landlords. I am currently working with a young woman, who is a University of Waterloo student who is looking for housing. Due to an injury she requires no stairs. She would also prefer females only in the home, but is alright with co-ed. Please let me know at your earliest convenience if this could be an option for her! We would love to come view the unit. Thank you for your time and I look forward to hearing from you! Thanks, Natasha 519-221-1150
+
+---LANDLORD---
+
+Hi Natasha
+Currently all of our properties will have
+a few stairs to access the units.
+Let me know if your student can
+manage just a few stairs to a lower level?
+Thank you
+Jody
+
+---TENANT---
+
+Hi Jody,
+
+I just wanted to check if you knew how many stairs she would have to manage.

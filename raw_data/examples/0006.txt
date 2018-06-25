@@ -1,0 +1,55 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+Hello. My name is Beranavi and I was wondering if you had any suites left at 16 Columbia St? Thank you in advance.
+
+---LANDLORD---
+
+Yes we do.
+Jody
+
+---TENANT---
+
+okay thank you! what is the suite furnished with?
+
+---LANDLORD---
+
+Bedroom furniture .
+Double bed, desk and chair. Bedside table . Dresser.
+Kitchen table
+
+---TENANT---
+
+okay thank you! Would I be able to come for a view tomorrow at 7:00?
+
+---LANDLORD---
+
+Yes
+
+---TENANT---
+
+okay I will meet you at 16 columbia st tomorrow at 7pm. is there an office that I should meet you at?
+
+---LANDLORD---
+
+You meet me at 85 seagram drive at 7 pm
+Thank you
+Jody
+
+---TENANT---
+
+Okay. Is there a reason why we're meeting at 85 Seagram instead of 16 columbia?
+
+---LANDLORD---
+
+No. I thought you wanted to meet at our office.
+See you at 16 Columbia🙂
+
+---TENANT---
+
+
+Oh no sorry for the confusion. I asked if there was an office at 16 columbia st. so I will see you at 16 columbia! Thank you!

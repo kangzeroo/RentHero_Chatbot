@@ -1,0 +1,24 @@
+---CONTEXT---
+
+Landlord: "Turnkey PM"
+Medium: "Email"
+
+---TENANT---
+
+I am wondering what you have available for a group of 4 girls?
+
+---LANDLORD---
+
+Yes we do.
+Would you like to schedule an appointment?
+Thank you
+Jody
+
+---TENANT---
+
+Which buildings do you have availability?
+
+---LANDLORD---
+
+​Hi Alex
+319 Erb st west​

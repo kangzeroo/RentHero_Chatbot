@@ -1,0 +1,64 @@
+Return-Path: <support@rentburrow.com>
+Received: from mail-qk0-f171.google.com (mail-qk0-f171.google.com [209.85.220.171])
+ by inbound-smtp.us-east-1.amazonaws.com with SMTP id 30c8mf9597rv99d2o7nt04frilq1fnpo60sqn581
+ for inquiries@rentburrow-messaging.com;
+ Mon, 23 Oct 2017 02:59:53 +0000 (UTC)
+X-SES-Spam-Verdict: PASS
+X-SES-Virus-Verdict: PASS
+Received-SPF: none (spfCheck: 209.85.220.171 is neither permitted nor denied by domain of rentburrow.com) client-ip=209.85.220.171; envelope-from=support@rentburrow.com; helo=mail-qk0-f171.google.com;
+Authentication-Results: amazonses.com;
+ spf=none (spfCheck: 209.85.220.171 is neither permitted nor denied by domain of rentburrow.com) client-ip=209.85.220.171; envelope-from=support@rentburrow.com; helo=mail-qk0-f171.google.com;
+ dkim=pass header.i=@rentburrow-com.20150623.gappssmtp.com;
+X-SES-RECEIPT: AEFBQUFBQUFBQUFHWW5NWVpCbnZnUm9QSjIyOWhqWG5sS2U2aGUrcGY5dE5FZU80VThGSTZWd0phbXNlSEJmZ0FGdzNIcDBTa04vTUloUFRnczFDMFU5OUVKN1pOaXJhaTNudmFtNTRpMEszcXlOTVNqeGw4bzhPeHlyL252TmxLdU43ellxUEkvWS8zcDZya3M3Ly91MzhPZFNFV3hXZXRJNFI1dnExYUl5eXN1REpEZlI5aTRCN0lObjJzMmF3YVBtc01YWXRGeFRvQ1JVOVNMZ2U4dkFENmNReDNOQitROVQ3UTVaOGxwbTF5V2ZNMXRVU1ZScDRVWHJwRTNNaDA0K1hicFNSc1p0UFZVSkR2dk5qN0pLK0NtVnVnWFlIUw==
+X-SES-DKIM-SIGNATURE: a=rsa-sha256; q=dns/txt; b=KPI1GLYYCqPplIU4mFnYLRMG1IgSG/UE6k4emi9+BLBeHqP5m9EpFES4jZIjwwrIsoNgxwsQ0WSAc+Md6cdlx5q1iibR7dRcuHgu9K7b4l4VYPX6lISKJqQZi4D5pkYCDuK94g9IDUt9BFeSJ4rHERuIvtDLrL4FXNuQyEuqnOI=; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1508727593; v=1; bh=n50zLgrjqGW+JMIfkyeeU+jL/HM0Yh63n0bpcVYmXsk=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;
+Received: by mail-qk0-f171.google.com with SMTP id x82so20333968qkb.12
+        for <inquiries@rentburrow-messaging.com>; Sun, 22 Oct 2017 19:59:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=rentburrow-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=n50zLgrjqGW+JMIfkyeeU+jL/HM0Yh63n0bpcVYmXsk=;
+        b=av2C+969YWHkLvQxqY5/LQxn3KmVDfg71vFyqN/F//KK8qlCwZ51PVSltiMlb9VPiF
+         DLai11K+HnDFJ7okkk14OjJwN+0PFZ4xQvbmRVt0cKIneXAJR87IQcbcXpwjNNPUVjfD
+         laFVuv0iA/aAN5Xeike79iVPsE/zTt4ppcT5Ijrlf2rLa3X1g5/jxHZprJV+PS+rrWGp
+         v8mZbxxzLM7tB3y1ajFgCFsZYvmDjxYDxYIKmJpEMmlJsI6zf6pFARnSGkMcDvJkHnw1
+         mRcpReEDacJCS6VUGMHt6/L17U2cEuIY+mYmXzpZXNPHebfmpCTqbdfXxdaE8DqHtfxI
+         yUIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=n50zLgrjqGW+JMIfkyeeU+jL/HM0Yh63n0bpcVYmXsk=;
+        b=bR8EdDPkUHKwKcl1wfsOcgZ+h8j93Dqm71X9OapW/L5A7NITW6p+Rdlc41GkT5pEmz
+         RD/1Ullh+/3WDyh16Nh1QTl1CcX9uKfiEDagQ/7WQIEnylKNDD5fujz/8U1Tvvi1/ND5
+         EHeM0JVnH/2E+z34dbe866o90ykS8QIUddJHEOv0qZk9z8v54iQjC7TpaYjJfwR91wXO
+         LTjKOEY7exHC3CqjeSYQYuCklJQeVhCeKhpLZZk3BqFDlVbjTU1B5N8R5h7JmhIxsNsC
+         OZHSaoELtABV3GfDDm0F9Tlyykab6+N64io4VLYPoXNaordQUr2ojL0nc0ANizRpmr2Q
+         P5hw==
+X-Gm-Message-State: AMCzsaVUOxg5C7lvUPDvHJ6LWNaB+SvELoy5nbClbKLTivHoaULeo/mU
+	r1nZmS++d5VkJsbrqkKC3whpOwL7NKG6ZzauPYQQBw==
+X-Google-Smtp-Source: ABhQp+SsBehjPODLBaFDP0W8wbn8o2Sroa1fG7PvdwwNbwAsvz9ex1G5dI/M+Nm/odO1PTD2i9nlIkXn2FGtoxJLSw4=
+X-Received: by 10.55.204.2 with SMTP id r2mr16698901qki.316.1508727592372;
+ Sun, 22 Oct 2017 19:59:52 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.200.56.200 with HTTP; Sun, 22 Oct 2017 19:59:51 -0700 (PDT)
+Received: by 10.200.56.200 with HTTP; Sun, 22 Oct 2017 19:59:51 -0700 (PDT)
+In-Reply-To: <CAKQL28J1b3FaUCHeH1PBJ3NpOnYGZZ2B7K9Hcf_1K9sZYqd-Yg@mail.gmail.com>
+References: <CAKQL28J1b3FaUCHeH1PBJ3NpOnYGZZ2B7K9Hcf_1K9sZYqd-Yg@mail.gmail.com>
+From: "RentBurrow .com" <support@rentburrow.com>
+Date: Sun, 22 Oct 2017 22:59:51 -0400
+Message-ID: <CAKQL28JvSq2a20XNovh---UOOGyNTCvyDpdyRV0krkG+v1YFYg@mail.gmail.com>
+Subject: Test
+To: inquiries@rentburrow-messaging.com
+Content-Type: multipart/alternative; boundary="001a1149a18e34eb37055c2e0419"
+
+--001a1149a18e34eb37055c2e0419
+Content-Type: text/plain; charset="UTF-8"
+
+Dog
+
+--001a1149a18e34eb37055c2e0419
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="auto">Dog</div>
+
+--001a1149a18e34eb37055c2e0419--
