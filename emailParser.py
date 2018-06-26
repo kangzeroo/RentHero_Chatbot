@@ -10,44 +10,53 @@ headers = Parser().parsestr(headerString)
 #Generate Body text
 mail = email.message_from_string(headerString)
 
-bodytext= 'To: %s' % headers['to'] + '\n' + 'From: %s' % headers['from'] + '\n' + 'Subject: %s' % headers['subject'] + '\n' + mail.get_payload()[0].get_payload()
+bodytext = 'To: %s' % headers['to'] \
+            + '\n' + 'From: %s' % headers['from'] \
+            + '\n' + 'Subject: %s' % headers['subject'] \
+            + '\n' + mail.get_payload()[0].get_payload()
 
 if type(bodytext) is list:
     bodytext=','.join(str(v) for v in bodytext)
 
 textVal = -1
 textList = []
-bodytextA = ''
+messageList = []
 bodytextB = ''
+bodytextB = bodytext.replace('------------------------------', '$*$') \
+                    .replace(' wrote:', '$*$') \
+                    .replace('\nwrote:', '$*$') \
+                    .replace('>', '')
+
 while True:
-    bodytextA = bodytext.replace('------------------------------', '$*$')
-    textVal = bodytextA.find('$*$', textVal + 1)
-    textList.append(textVal)
-    print(str(textVal)+' 0 loop')
-    if textVal == -1: break
-while True:
-    bodytextB = bodytextA.replace(' wrote:', '$*$')
     textVal = bodytextB.find('$*$', textVal + 1)
     textList.append(textVal)
-    print(str(textVal)+' 1 loop')
-
     if textVal == -1: break
 
 textList.sort()
-textList.pop()
-textList.pop()
+
+def find_between(s, first, last):
+    try:
+        start = s.index( first ) + len( first )
+        end = s.index( last, start )
+        return s[start:end]
+    except ValueError:
+        return ""
 
 #Generate seperating points of each message
-emailList = [bodytext,'$END$\n\n']
+emailList = ['$*$\n$END$\n']
 for i in range(0, len(textList)-1):
     emailList.append('')
     for j in range(textList[i], textList[i+1]):
         emailList[i] += bodytextB[j]
+    emailList[i] += '$*$\n'
+    messageList.append(find_between(emailList[i], '$*$', '$*$'))
+
+emailList.insert(0,bodytext)
 
 for j in range(textList[len(textList)-1], len(bodytextB)):
     emailList[len(textList)-1] += bodytextB[j]
-emailList.append('\n$START$')
+emailList.append('\n$START$\n$*$')
 
-for i in range(1, len(emailList)):
-     print(emailList[i])
+for i in range(0, len(messageList)):
+     print(messageList[i])
      print('\n\n\n')
