@@ -1,13 +1,14 @@
 import email
 import re
 
-messagefile = './raw_data/raw_emails/MIME_Emails/1vqcsmni9o9td9cmp4l4vvg5qgqmrv6oi3jnaio1.txt'
+messagefile = './raw_data/raw_emails/MIME_Emails/emailEX.txt'
 emailList = ['$*$\n$END$\n']
 bodyReplaced = ''
 textVal = -1
 textIndexList = []
 messageList = []
 messageListReplaced = []
+isKijiji = False
 
 def find_between(s, first, last):
     try:
@@ -20,12 +21,16 @@ def find_between(s, first, last):
 with open(messagefile) as fp:
     headerString = fp.read()
 mailMIMEForm = email.message_from_string(headerString)
-for payload in mailMIMEForm.get_payload():
-    x = payload.get_payload().strip()
-print(x)
+# for payload in mailMIMEForm.get_payload():
+#     x = payload.get_payload().strip()
+# print(x)
 bodytext = mailMIMEForm.get_payload()[0].get_payload()
 
 #emailList.append(['HEADER', mailMIMEForm['from'], mailMIMEForm['to'], mailMIMEForm['date'], mailMIMEForm['subject']])
+
+#Kijiji check
+if 'Ad on Kijiji' in mailMIMEForm['subject']:
+    isKijiji = True
 
 bodyReplaced = bodytext.replace('*', '') \
                        .replace('------------------------------', '$*$') \

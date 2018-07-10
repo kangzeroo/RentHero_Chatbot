@@ -1,0 +1,754 @@
+Delivered-To: jake.malliaros@gmail.com
+Received: by 2002:a4a:365a:0:0:0:0:0 with SMTP id p26-v6csp2810522ooe;
+        Mon, 9 Jul 2018 10:56:39 -0700 (PDT)
+X-Received: by 2002:aca:44c5:: with SMTP id r188-v6mr4623426oia.280.1531158998943;
+        Mon, 09 Jul 2018 10:56:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1531158998; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Xpx7lghxy8EWOHrx5SzXZc2x7vIT/+/+Y177SZtLGM5qVT/b25YooEHwHPotSqtOXs
+         /Q8HfxpDxtt9k0X+6skuEzGPx2pkVNQMKMztaPovKp2pWAVrf9ydCGB2v74brY8UTCYt
+         YEPqnOQANumTmsf7Na4gBFwvcnxaJFMRJFu7Sq5xD8bRRbSJ9mTxiGwdTHkbh7hXT5n0
+         9wT/Sna66H6AJ9cbvZRpzxD9Uw5/DsIAG1zI4/1tvyGXmDWFD2Eyhl95RIwX+nsP4vvD
+         pKE7TDWwu6GF0dqDBgMnkhtwO0vq49N1cNr+VPskwGK+z8eVQvqICOOub6MdPHmqr2ii
+         gI4A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=/4JxDnavx0nY4wLdyq1b5jK9svtjRZlkP+IIoHOK/WU=;
+        b=XOJ85V4QlYpXvUxS5xnJwsAtEsl8YOxjgZ4jq5BL1og2/4AIaLEc3KzO66QrOFoAuG
+         heP9P8RV9ZTBDrBp2VneSr3CeYDBvVcQOYn5t11kPG2Gb9mq/xzsv/T+ZEkJHVp54g2H
+         sJG0HXFS5icG8bO1lr/UCg4bZ6E0z7LrVU5rUEzBGyDqSbtcqWvHZUy+D/36J0+Licx7
+         Eayq4B20w5PBj9sdFmVx2N9NmbPT+zRLzl2L1ocCGIgX2dQzcPd7VSzBxySOYICblEdk
+         t9BOC1S0dvpAT/dhfZDrPem/MH3QuUnePWrRbZvD5DSL6VL2X9OHL1wkrBkI4vz+XT2Q
+         xFXA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=H6Kpiif2;
+       spf=pass (google.com: domain of huang.khan74@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=huang.khan74@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <huang.khan74@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id u8-v6sor9453357oif.264.2018.07.09.10.56.38
+        (Google Transport Security);
+        Mon, 09 Jul 2018 10:56:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of huang.khan74@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=H6Kpiif2;
+       spf=pass (google.com: domain of huang.khan74@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=huang.khan74@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=/4JxDnavx0nY4wLdyq1b5jK9svtjRZlkP+IIoHOK/WU=;
+        b=H6Kpiif2kYid1oWd0Wn4K5J+9pmDbw1gcvx04SIdQh1v9eaPdNwpHp299pV6LMtaT5
+         EAKNbZrnnP87LaikZEdrzvaflBD9aB+gGUivPRQ92TuHCt+cXdVBTaMBkSIlwVNXRq7y
+         Ytam//34mHswLdjJ+q4lrT0X3LmhueKBUrvbLfHS6QnYklDjB7HkzSB6h5GC2M3KSZjh
+         Sk2mkqL9nDadgSg8zGhUH9F4V2XcFPbuyW8th50xE+5kqNUPBZ0JqqBEFYAJlbwEnzno
+         psciVsQ/aq2vRTOJLDjDysfsN92X1bJQB2O359OdlcSd/nJLpu9DwzPb46z9bjNNmMr0
+         L4wQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=/4JxDnavx0nY4wLdyq1b5jK9svtjRZlkP+IIoHOK/WU=;
+        b=tdm2CVzhTKx86SDaAPQHMUvjyeYHHCpVLkHNcd6zQW3WLPOA2pAoEnaIBblfXwNY+d
+         2kNRJQe6QKqQETFefNOK6VVTnyEx/s5FVPf5AUIycDhIIJYn8t5z7pr0Pba2aRocg9Iw
+         +8e+z7WCviXCr7xSPa7pzIpK6R+seeuvnik9mSNPm+QNn2oe44biDkY5X8wHVChRmRBc
+         1RPzbfogILecLgnoMS+SwqvT0egF7u2CIAJUjp/8wu5su0YTiELz35k4JQ5mXrCtotc+
+         ePllbYjcI9WfinGPPzptMYF8/ZAPxyK9dg3yEPOUKv7hevzLbQOsyuubf0qEmLvPQJCg
+         9/ew==
+X-Gm-Message-State: APt69E32LxgZyjvxek+HQVKtGu4uFnuW5eJfAA4NrqbQDrXUz+ThzeGA 9F0YTaZ673n2p4RMC14bTKscac2/5dX9wiqI9+8=
+X-Google-Smtp-Source: AAOMgpfbvNl9fB6K1gqjB6XWExyblrUxlvsgAf6MLcGs+iy432m0ZMnf9PjuhQ0bleApgmqsBxO5K39g7AKU/yQ/Jgw=
+X-Received: by 2002:a54:4406:: with SMTP id k6-v6mr13379174oiw.34.1531158997948; Mon, 09 Jul 2018 10:56:37 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAANb1FaoOG4BU4pR1C3kYyJETn1m3mGCsnOWLD3ug3mTbO_dhg@mail.gmail.com> <CAKZk_OA5OztjtVxG72ZDsyo2rFxkUrhkZ=jirO=ys1mHWxxdJg@mail.gmail.com> <CAKZk_ODRS-L=Q1FfayVwrPpyEeT5FsASms4esqzakTjLoCKSUQ@mail.gmail.com> <CAANb1FZiEx=C=2EJBuTdkFS-bsFzKomUy=QmyQKWqQRTL2rNZw@mail.gmail.com> <CAANb1Fa3QFXY4MusqvJ_QDN_WkPy-ie6PShQYOiv4JpKvSMO7g@mail.gmail.com> <CAKZk_ODeFbDLWQz2XdN=+C1AszpNSaf8==NvwaJn1kSE+0KwfA@mail.gmail.com> <CAANb1FYKn=vpR21j2_TF61QVVup4B1RpsPW3DObh4V0442DMSA@mail.gmail.com> <CAKZk_OCE5BeiDheL-1x36qYHknWis_d2035jQX51pnd_LNuDvg@mail.gmail.com> <CAANb1FbD4DXQcvgC2+JhS5sgfJAS0Wy-C2=7xtacLwePOHqgAA@mail.gmail.com>
+In-Reply-To: <CAANb1FbD4DXQcvgC2+JhS5sgfJAS0Wy-C2=7xtacLwePOHqgAA@mail.gmail.com>
+From: Khan Huang <huang.khan74@gmail.com>
+Date: Mon, 9 Jul 2018 13:56:25 -0400
+Message-ID: <CAKZk_ODPjcr-WrgmK-AM52WJCHf10q=H4sKh64X2Gh9cT1jr8w@mail.gmail.com>
+Subject: Fwd: Rent payments
+To: Adam Jurgens <adam.o.jurgens@gmail.com>, jimmyzidanguo@hotmail.com, jake.malliaros@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000002ade0b057094bc52"
+
+--0000000000002ade0b057094bc52
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: Katherine Hodge <domusrentpayments@gmail.com>
+Date: Mon, Jul 9, 2018 at 9:45 AM
+Subject: Re: Rent payments
+To: Khan Huang <huang.khan74@gmail.com>
+
+
+HI Kangze,
+
+Yes July 2018 is your free month which is why we havent taken the payment.
+
+Thanks,
+
+Katherine Hodge
+COLLECTIONS & DISPUTE RESOLUTION SUPERVISOR
+
+*Domus Student Housing Inc.*
+*HEAD OFFICE *295 Weber St N Suite 7, Waterloo, ON N2J 3H8
+<https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON+N2J+3H8&=
+entry=3Dgmail&source=3Dg>
+*PHONE*
+519-342-0608 x 105 <(519)%20342-0608>
+| *TOLL FREE *
+=E2=80=8B
+1-855-MY-DOMUS (693-6687)
+=E2=80=8B=E2=80=8B
+*WWW.DOMUSHOUSING.COM
+<https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4Qxj=
+z60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BKtM7=
+SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-2FH=
+t-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0NM6=
+1EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D>*
+
+
+On Mon, Jul 9, 2018 at 3:21 AM, Khan Huang <huang.khan74@gmail.com> wrote:
+
+> Hello Katherine,
+>
+> I was wondering why Domus has not yet withdrawn my July rent payment?
+> (Kangze Huang, 330 Spruce St Unit 204, Room #2
+> <https://maps.google.com/?q=3D330+Spruce+St+Unit+204,+Room+%232&entry=3Dg=
+mail&source=3Dg>).
+> I'm not sure if its because it was included in the free months rent, or i=
+f
+> there was a cheque missing for July. Please let me know so I can get this
+> settled, thank you! :)
+>
+> Best Regards,
+> Kangze
+>
+> On Mon, Mar 26, 2018 at 9:51 AM Katherine Hodge <
+> domusrentpayments@gmail.com> wrote:
+>
+>> Thank you
+>>
+>> Katherine Hodge
+>> COLLECTIONS & DISPUTE RESOLUTION SUPERVISOR
+>>
+>> *Domus Student Housing Inc.*
+>> *HEAD OFFICE *295 Weber St N Suite 7, Waterloo, ON N2J 3H8
+>> <https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON+N2J+3=
+H8&entry=3Dgmail&source=3Dg>
+>> *PHONE*
+>> 519-342-0608 x 105 <(519)%20342-0608>
+>> | *TOLL FREE *
+>> =E2=80=8B
+>> 1-855-MY-DOMUS (693-6687)
+>> =E2=80=8B=E2=80=8B
+>> *WWW.DOMUSHOUSING.COM
+>> <https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4=
+Qxjz60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BK=
+tM7SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-=
+2FHt-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0=
+NM61EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D>*
+>>
+>>
+>> On Sat, Mar 24, 2018 at 5:05 PM, Khan Huang <huang.khan74@gmail.com>
+>> wrote:
+>>
+>>> Hello Katherine,
+>>>
+>>> The rent was paid, I stopped by the office and got a receipt. Thanks!
+>>>
+>>> Best Regards,
+>>> Kangze
+>>>
+>>> On Wed, Mar 21, 2018 at 1:34 PM, Katherine Hodge <
+>>> domusrentpayments@gmail.com> wrote:
+>>>
+>>>> Hi Kangze,
+>>>>
+>>>> We still have not received your February rent and the NSF fee, please
+>>>> know if we do not receive payment *immediately *we will be taking
+>>>> legal action against yourself and Xiuli Huang.
+>>>>
+>>>> Thank you
+>>>>
+>>>> Katherine Hodge
+>>>> COLLECTIONS & DISPUTE RESOLUTION SUPERVISOR
+>>>>
+>>>> *Domus Student Housing Inc.*
+>>>> *HEAD OFFICE *295 Weber St N Suite 7, Waterloo, ON N2J 3H8
+>>>> <https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON+N2J=
++3H8&entry=3Dgmail&source=3Dg>
+>>>> *PHONE*
+>>>> 519-342-0608 x 105 <(519)%20342-0608>
+>>>> | *TOLL FREE *
+>>>> =E2=80=8B
+>>>> 1-855-MY-DOMUS (693-6687)
+>>>> =E2=80=8B=E2=80=8B
+>>>> *WWW.DOMUSHOUSING.COM
+>>>> <https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZry=
+E4Qxjz60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2=
+BKtM7SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jp=
+n-2FHt-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjED=
+p0NM61EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D>*
+>>>>
+>>>>
+>>>> On Fri, Mar 16, 2018 at 10:38 AM, Katherine Hodge <
+>>>> domusrentpayments@gmail.com> wrote:
+>>>>
+>>>>> Hi Kangze,
+>>>>>
+>>>>> Sadly we do not attempt again, you will have to come into our office
+>>>>> to submit the payment.
+>>>>>
+>>>>> Thank you
+>>>>>
+>>>>> Katherine Hodge
+>>>>> COLLECTIONS & DISPUTE RESOLUTION SUPERVISOR
+>>>>>
+>>>>> *Domus Student Housing Inc.*
+>>>>> *HEAD OFFICE *295 Weber St N Suite 7, Waterloo, ON N2J 3H8
+>>>>> <https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON+N2=
+J+3H8&entry=3Dgmail&source=3Dg>
+>>>>> *PHONE*
+>>>>> 519-342-0608 x 105 <(519)%20342-0608>
+>>>>> | *TOLL FREE *
+>>>>> =E2=80=8B
+>>>>> 1-855-MY-DOMUS (693-6687)
+>>>>> =E2=80=8B=E2=80=8B
+>>>>> *WWW.DOMUSHOUSING.COM
+>>>>> <https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZr=
+yE4Qxjz60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-=
+2BKtM7SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25J=
+pn-2FHt-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjE=
+Dp0NM61EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D>=
+*
+>>>>>
+>>>>>
+>>>>> On Tue, Mar 13, 2018 at 10:19 AM, Khan Huang <huang.khan74@gmail.com>
+>>>>> wrote:
+>>>>>
+>>>>>> Hello Katherine,
+>>>>>>
+>>>>>> Have you attempted the rent collection again yet? My bank account
+>>>>>> shows there was no withdrawal.
+>>>>>> Please let me know, thanks.
+>>>>>>
+>>>>>> Best Regards,
+>>>>>> Kangze
+>>>>>>
+>>>>>> On Mon, Feb 12, 2018 at 2:17 PM, Khan Huang <huang.khan74@gmail.com>
+>>>>>> wrote:
+>>>>>>
+>>>>>>> Hello Katherine,
+>>>>>>>
+>>>>>>> Thanks for the notice. I think my eTransfer into my bank was a day
+>>>>>>> late but there funds are there. Are you able up attempt it again?
+>>>>>>>
+>>>>>>> Is there an alternative way to pay such as eTransfer?
+>>>>>>>
+>>>>>>> Thanks,
+>>>>>>> Khan
+>>>>>>>
+>>>>>>> On Feb 12, 2018 1:58 PM, "Katherine Hodge" <
+>>>>>>> domusrentpayments@gmail.com> wrote:
+>>>>>>>
+>>>>>>>> Dear Kangze,
+>>>>>>>>
+>>>>>>>> Our records indicate your rent payment for February 2018, has
+>>>>>>>> bounced and we have not yet received your replacement payment.
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> Please contact Domus Student Housing as soon as possible and
+>>>>>>>> arrange to submit your rent payment and the $25.00 NSF fee as per =
+your
+>>>>>>>> lease, by delivering it to our office. Payment can be made via, de=
+bit,
+>>>>>>>> certified cheque, credit or money order.
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> *Please Note:*
+>>>>>>>>
+>>>>>>>> *If there is no payment or communication made to Domus Student
+>>>>>>>> Housing at 519-342-0608 ext 105 <(519)%20342-0608> or email at
+>>>>>>>> rentpayments@domushousing.com <rentpayments@domushousing.com>. We =
+will
+>>>>>>>> proceed with legal action and will issue an N4 Notice (Notice to T=
+erminate
+>>>>>>>> Early for Non-payment of Rent) *
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> Thank you for your immediate attention. If you have any questions
+>>>>>>>> or concerns, please feel free to contact me.
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> If you have already arranged payment, please accept our Thanks, an=
+d
+>>>>>>>> disregard this notice.
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> Sincerely,
+>>>>>>>>
+>>>>>>>> Katherine Hodge
+>>>>>>>> COLLECTIONS & DISPUTE RESOLUTION SUPERVISOR
+>>>>>>>>
+>>>>>>>> *Domus Student Housing Inc.*
+>>>>>>>> *HEAD OFFICE *295 Weber St N Suite 7, Waterloo, ON N2J 3H8
+>>>>>>>> <https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON=
++N2J+3H8&entry=3Dgmail&source=3Dg>
+>>>>>>>> *PHONE*
+>>>>>>>> 519-342-0608 x 105 <(519)%20342-0608>
+>>>>>>>> | *TOLL FREE *
+>>>>>>>> =E2=80=8B
+>>>>>>>> 1-855-MY-DOMUS (693-6687)
+>>>>>>>> =E2=80=8B=E2=80=8B
+>>>>>>>> *WWW.DOMUSHOUSING.COM
+>>>>>>>> <https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6Gok=
+gZryE4Qxjz60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjF=
+qS-2BKtM7SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo=
+25Jpn-2FHt-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDM=
+YjEDp0NM61EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-=
+3D>*
+>>>>>>>>
+>>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
+
+--0000000000002ade0b057094bc52
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr">------=
+---- Forwarded message ---------<br>From: <strong class=3D"gmail_sendername=
+" dir=3D"auto">Katherine Hodge</strong> <span dir=3D"ltr">&lt;<a href=3D"ma=
+ilto:domusrentpayments@gmail.com">domusrentpayments@gmail.com</a>&gt;</span=
+><br>Date: Mon, Jul 9, 2018 at 9:45 AM<br>Subject: Re: Rent payments<br>To:=
+ Khan Huang &lt;<a href=3D"mailto:huang.khan74@gmail.com">huang.khan74@gmai=
+l.com</a>&gt;<br></div><br><br><div dir=3D"ltr"><div style=3D"font-family:a=
+rial,helvetica,sans-serif">HI Kangze,=C2=A0</div><div style=3D"font-family:=
+arial,helvetica,sans-serif"><br></div><div style=3D"font-family:arial,helve=
+tica,sans-serif">Yes July 2018 is your free month which is why we havent ta=
+ken the payment.=C2=A0</div><div style=3D"font-family:arial,helvetica,sans-=
+serif"><br></div><div style=3D"font-family:arial,helvetica,sans-serif">Than=
+ks,</div></div><div class=3D"gmail_extra"><br clear=3D"all"><div><div class=
+=3D"m_-4142265980933361382gmail_signature" data-smartmail=3D"gmail_signatur=
+e"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"=
+><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div d=
+ir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"l=
+tr"><div dir=3D"ltr"><div><div><font color=3D"#999999" face=3D"arial, helve=
+tica, sans-serif" size=3D"2">Katherine Hodge</font></div><div style=3D"font=
+-size:small"><font size=3D"1" color=3D"#666666"><div style=3D"font-family:a=
+rial,helvetica,sans-serif;color:rgb(68,68,68);display:inline">COLLECTIONS=
+=C2=A0&amp; DISPUTE RESOLUTION SUPERVISOR</div></font><br><b><font color=3D=
+"#cc0000" face=3D"arial, helvetica, sans-serif">Domus Student Housing Inc.<=
+/font></b><font color=3D"#cc0000"><b><br></b></font></div><div style=3D"fon=
+t-size:small"><b style=3D"color:rgb(68,68,68);font-family:arial,helvetica,s=
+ans-serif;font-size:x-small"><div style=3D"display:inline">HEAD OFFICE=C2=
+=A0</div></b><font size=3D"1"><font face=3D"arial, helvetica, sans-serif"><=
+a href=3D"https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,+ON=
++N2J+3H8&amp;entry=3Dgmail&amp;source=3Dg" style=3D"color:rgb(17,85,204)" t=
+arget=3D"_blank">295 Weber St N Suite 7, Waterloo, ON N2J 3H8</a></font><br=
+><font color=3D"#444444" face=3D"arial, helvetica, sans-serif"><b>PHONE</b>=
+</font><font style=3D"font-family:tahoma,sans-serif">=C2=A0</font><div styl=
+e=3D"font-family:arial,helvetica,sans-serif;display:inline"><font color=3D"=
+#0000ff"><a href=3D"tel:(519)%20342-0608" value=3D"+15193420608" style=3D"c=
+olor:rgb(17,85,204)" target=3D"_blank">519-342-0608 x 105</a>=C2=A0=C2=A0</=
+font></div></font><font size=3D"1"><font color=3D"#444444" face=3D"arial, h=
+elvetica, sans-serif"><div style=3D"display:inline">|=C2=A0<b>TOLL FREE=C2=
+=A0</b></div></font></font><div style=3D"font-size:x-small;font-family:aria=
+l,helvetica,sans-serif;color:rgb(68,68,68);display:inline">=E2=80=8B</div><=
+span style=3D"color:rgb(153,153,153);font-family:tahoma,sans-serif;font-siz=
+e:x-small">1-855-MY-DOMUS (693-6687)</span></div><span style=3D"font-size:1=
+2.8px"><div style=3D"font-size:small"><font size=3D"1" face=3D"tahoma, sans=
+-serif" color=3D"#666666"><div style=3D"display:inline">=E2=80=8B=E2=80=8B<=
+/div></font><font color=3D"#666666"><b style=3D"font-size:x-small"><font si=
+ze=3D"1" face=3D"arial, helvetica, sans-serif"><a href=3D"https://u5472051.=
+ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4Qxjz60wEYOudWzapyImF9=
+9jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BKtM7SSzbIIGaO642ZNfT6E=
+HVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-2FHt-2FUvoo907fyf-2Bp=
+8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0NM61EBZYTvhU3Y2U8wak4=
+yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D" style=3D"color:rgb(17,8=
+5,204)" target=3D"_blank">WWW.DOMUSHOUSING.COM</a></font></b><font size=3D"=
+1" style=3D"color:rgb(34,34,34)"><a value=3D"+15193420608" style=3D"color:r=
+gb(17,85,204)"><br></a></font></font></div><div style=3D"font-size:small"><=
+br></div></span></div><div><div></div></div></div></div></div></div></div><=
+/div></div></div></div></div></div></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Mon, Jul 9, 2018 at 3:21 AM, Khan Huang <=
+span dir=3D"ltr">&lt;<a href=3D"mailto:huang.khan74@gmail.com" target=3D"_b=
+lank">huang.khan74@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"=
+gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-=
+left:1ex"><div dir=3D"ltr">Hello Katherine,<div><br></div><div>I was wonder=
+ing why Domus has not yet withdrawn my July rent payment? (Kangze Huang, <a=
+ href=3D"https://maps.google.com/?q=3D330+Spruce+St+Unit+204,+Room+%232&amp=
+;entry=3Dgmail&amp;source=3Dg" target=3D"_blank">330 Spruce St Unit 204, Ro=
+om #2</a>). I&#39;m not sure if its because it was included in the free mon=
+ths rent, or if there was a cheque missing for July. Please let me know so =
+I can get this settled, thank you! :)</div><div><br></div><div>Best Regards=
+,</div><div>Kangze</div></div><div class=3D"m_-4142265980933361382HOEnZb"><=
+div class=3D"m_-4142265980933361382h5"><br><div class=3D"gmail_quote"><div =
+dir=3D"ltr">On Mon, Mar 26, 2018 at 9:51 AM Katherine Hodge &lt;<a href=3D"=
+mailto:domusrentpayments@gmail.com" target=3D"_blank">domusrentpayments@gma=
+il.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"m=
+argin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"l=
+tr"><div style=3D"font-family:arial,helvetica,sans-serif">Thank you</div></=
+div><div class=3D"gmail_extra"><br clear=3D"all"><div><div class=3D"m_-4142=
+265980933361382m_-7748926155366004177m_-2267042601411398490gmail_signature"=
+ data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr">=
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div><div><font color=
+=3D"#999999" face=3D"arial, helvetica, sans-serif" size=3D"2">Katherine Hod=
+ge</font></div><div style=3D"font-size:small"><font size=3D"1" color=3D"#66=
+6666"><div style=3D"font-family:arial,helvetica,sans-serif;color:rgb(68,68,=
+68);display:inline">COLLECTIONS=C2=A0&amp; DISPUTE RESOLUTION SUPERVISOR</d=
+iv></font><br><b><font color=3D"#cc0000" face=3D"arial, helvetica, sans-ser=
+if">Domus Student Housing Inc.</font></b><font color=3D"#cc0000"><b><br></b=
+></font></div><div style=3D"font-size:small"><b style=3D"color:rgb(68,68,68=
+);font-family:arial,helvetica,sans-serif;font-size:x-small"><div style=3D"d=
+isplay:inline">HEAD OFFICE=C2=A0</div></b><font size=3D"1"><font face=3D"ar=
+ial, helvetica, sans-serif"><a href=3D"https://maps.google.com/?q=3D295+Web=
+er+St+N+Suite+7,+Waterloo,+ON+N2J+3H8&amp;entry=3Dgmail&amp;source=3Dg" sty=
+le=3D"color:rgb(17,85,204)" target=3D"_blank">295 Weber St N Suite 7, Water=
+loo, ON N2J 3H8</a></font><br><font color=3D"#444444" face=3D"arial, helvet=
+ica, sans-serif"><b>PHONE</b></font><font style=3D"font-family:tahoma,sans-=
+serif">=C2=A0</font><div style=3D"font-family:arial,helvetica,sans-serif;di=
+splay:inline"><font color=3D"#0000ff"><a href=3D"tel:(519)%20342-0608" valu=
+e=3D"+15193420608" style=3D"color:rgb(17,85,204)" target=3D"_blank">519-342=
+-0608 x 105</a>=C2=A0=C2=A0</font></div></font><font size=3D"1"><font color=
+=3D"#444444" face=3D"arial, helvetica, sans-serif"><div style=3D"display:in=
+line">|=C2=A0<b>TOLL FREE=C2=A0</b></div></font></font><div style=3D"font-s=
+ize:x-small;font-family:arial,helvetica,sans-serif;color:rgb(68,68,68);disp=
+lay:inline">=E2=80=8B</div><span style=3D"color:rgb(153,153,153);font-famil=
+y:tahoma,sans-serif;font-size:x-small">1-855-MY-DOMUS (693-6687)</span></di=
+v><span style=3D"font-size:12.8px"><div style=3D"font-size:small"><font siz=
+e=3D"1" face=3D"tahoma, sans-serif" color=3D"#666666"><div style=3D"display=
+:inline">=E2=80=8B=E2=80=8B</div></font><font color=3D"#666666"><b style=3D=
+"font-size:x-small"><font size=3D"1" face=3D"arial, helvetica, sans-serif">=
+<a href=3D"https://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6Go=
+kgZryE4Qxjz60wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVj=
+FqS-2BKtM7SSzbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebf=
+o25Jpn-2FHt-2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URD=
+MYjEDp0NM61EBZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y=
+-3D" style=3D"color:rgb(17,85,204)" target=3D"_blank">WWW.DOMUSHOUSING.COM<=
+/a></font></b><font size=3D"1" style=3D"color:rgb(34,34,34)"><a value=3D"+1=
+5193420608" style=3D"color:rgb(17,85,204)"><br></a></font></font></div><div=
+ style=3D"font-size:small"><br></div></span></div><div><div></div></div></d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>=
+</div></div></div></div>
+<br><div class=3D"gmail_quote">On Sat, Mar 24, 2018 at 5:05 PM, Khan Huang =
+<span dir=3D"ltr">&lt;<a href=3D"mailto:huang.khan74@gmail.com" target=3D"_=
+blank">huang.khan74@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D=
+"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding=
+-left:1ex"><div dir=3D"ltr">Hello Katherine,<div><br></div><div>The rent wa=
+s paid, I stopped by the office and got a receipt. Thanks!</div><div><br></=
+div><div>Best Regards,</div><div>Kangze</div></div><div class=3D"m_-4142265=
+980933361382m_-7748926155366004177m_-2267042601411398490HOEnZb"><div class=
+=3D"m_-4142265980933361382m_-7748926155366004177m_-2267042601411398490h5"><=
+div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Wed, Mar 21, 20=
+18 at 1:34 PM, Katherine Hodge <span dir=3D"ltr">&lt;<a href=3D"mailto:domu=
+srentpayments@gmail.com" target=3D"_blank">domusrentpayments@gmail.com</a>&=
+gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 =
+0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"ltr"><div s=
+tyle=3D"font-family:arial,helvetica,sans-serif">Hi Kangze,=C2=A0</div><div =
+style=3D"font-family:arial,helvetica,sans-serif"><br></div><div style=3D"fo=
+nt-family:arial,helvetica,sans-serif">We still have not received your Febru=
+ary rent and the NSF fee, please know if we do not receive payment <u><b>im=
+mediately </b></u>we will be taking legal action against yourself and=C2=A0=
+Xiuli=C2=A0Huang.</div><div style=3D"font-family:arial,helvetica,sans-serif=
+"><br></div><div style=3D"font-family:arial,helvetica,sans-serif">Thank you=
+</div></div><div class=3D"gmail_extra"><span><br clear=3D"all"><div><div cl=
+ass=3D"m_-4142265980933361382m_-7748926155366004177m_-2267042601411398490m_=
+-637604312774058929m_4932129062237346860gmail_signature" data-smartmail=3D"=
+gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><d=
+iv dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr"><div><div><font color=3D"#999999" face=
+=3D"arial, helvetica, sans-serif" size=3D"2">Katherine Hodge</font></div><d=
+iv style=3D"font-size:small"><font size=3D"1" color=3D"#666666"><div style=
+=3D"font-family:arial,helvetica,sans-serif;color:rgb(68,68,68);display:inli=
+ne">COLLECTIONS=C2=A0&amp; DISPUTE RESOLUTION SUPERVISOR</div></font><br><b=
+><font color=3D"#cc0000" face=3D"arial, helvetica, sans-serif">Domus Studen=
+t Housing Inc.</font></b><font color=3D"#cc0000"><b><br></b></font></div><d=
+iv style=3D"font-size:small"><b style=3D"color:rgb(68,68,68);font-family:ar=
+ial,helvetica,sans-serif;font-size:x-small"><div style=3D"display:inline">H=
+EAD OFFICE=C2=A0</div></b><font size=3D"1"><font face=3D"arial, helvetica, =
+sans-serif"><a href=3D"https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,=
++Waterloo,+ON+N2J+3H8&amp;entry=3Dgmail&amp;source=3Dg" style=3D"color:rgb(=
+17,85,204)" target=3D"_blank">295 Weber St N Suite 7, Waterloo, ON N2J 3H8<=
+/a></font><br><font color=3D"#444444" face=3D"arial, helvetica, sans-serif"=
+><b>PHONE</b></font><font style=3D"font-family:tahoma,sans-serif">=C2=A0</f=
+ont><div style=3D"font-family:arial,helvetica,sans-serif;display:inline"><f=
+ont color=3D"#0000ff"><a href=3D"tel:(519)%20342-0608" value=3D"+1519342060=
+8" style=3D"color:rgb(17,85,204)" target=3D"_blank">519-342-0608 x 105</a>=
+=C2=A0=C2=A0</font></div></font><font size=3D"1"><font color=3D"#444444" fa=
+ce=3D"arial, helvetica, sans-serif"><div style=3D"display:inline">|=C2=A0<b=
+>TOLL FREE=C2=A0</b></div></font></font><div style=3D"font-size:x-small;fon=
+t-family:arial,helvetica,sans-serif;color:rgb(68,68,68);display:inline">=E2=
+=80=8B</div><span style=3D"color:rgb(153,153,153);font-family:tahoma,sans-s=
+erif;font-size:x-small">1-855-MY-DOMUS (693-6687)</span></div><span style=
+=3D"font-size:12.8px"><div style=3D"font-size:small"><font size=3D"1" face=
+=3D"tahoma, sans-serif" color=3D"#666666"><div style=3D"display:inline">=E2=
+=80=8B=E2=80=8B</div></font><font color=3D"#666666"><b style=3D"font-size:x=
+-small"><font size=3D"1" face=3D"arial, helvetica, sans-serif"><a href=3D"h=
+ttps://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4Qxjz6=
+0wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BKtM7SS=
+zbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-2FHt-=
+2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0NM61E=
+BZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D" style=
+=3D"color:rgb(17,85,204)" target=3D"_blank">WWW.DOMUSHOUSING.COM</a></font>=
+</b><font size=3D"1" style=3D"color:rgb(34,34,34)"><a value=3D"+15193420608=
+" style=3D"color:rgb(17,85,204)"><br></a></font></font></div><div style=3D"=
+font-size:small"><br></div></span></div><div><div></div></div></div></div><=
+/div></div></div></div></div></div></div></div></div></div></div></div></di=
+v></div></div>
+<br></span><div><div class=3D"m_-4142265980933361382m_-7748926155366004177m=
+_-2267042601411398490m_-637604312774058929h5"><div class=3D"gmail_quote">On=
+ Fri, Mar 16, 2018 at 10:38 AM, Katherine Hodge <span dir=3D"ltr">&lt;<a hr=
+ef=3D"mailto:domusrentpayments@gmail.com" target=3D"_blank">domusrentpaymen=
+ts@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" sty=
+le=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div d=
+ir=3D"ltr"><div style=3D"font-family:arial,helvetica,sans-serif">Hi Kangze,=
+=C2=A0</div><div style=3D"font-family:arial,helvetica,sans-serif"><br></div=
+><div style=3D"font-family:arial,helvetica,sans-serif">Sadly we do not atte=
+mpt again, you will have to come into our office to submit the payment.</di=
+v><div style=3D"font-family:arial,helvetica,sans-serif"><br></div><div styl=
+e=3D"font-family:arial,helvetica,sans-serif">Thank you</div></div><div clas=
+s=3D"gmail_extra"><span><br clear=3D"all"><div><div class=3D"m_-41422659809=
+33361382m_-7748926155366004177m_-2267042601411398490m_-637604312774058929m_=
+4932129062237346860m_-7499116406490468431gmail_signature" data-smartmail=3D=
+"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><=
+div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr"><div><div><font color=3D"#999999" face=
+=3D"arial, helvetica, sans-serif" size=3D"2">Katherine Hodge</font></div><d=
+iv style=3D"font-size:small"><font size=3D"1" color=3D"#666666"><div style=
+=3D"font-family:arial,helvetica,sans-serif;color:rgb(68,68,68);display:inli=
+ne">COLLECTIONS=C2=A0&amp; DISPUTE RESOLUTION SUPERVISOR</div></font><br><b=
+><font color=3D"#cc0000" face=3D"arial, helvetica, sans-serif">Domus Studen=
+t Housing Inc.</font></b><font color=3D"#cc0000"><b><br></b></font></div><d=
+iv style=3D"font-size:small"><b style=3D"color:rgb(68,68,68);font-family:ar=
+ial,helvetica,sans-serif;font-size:x-small"><div style=3D"display:inline">H=
+EAD OFFICE=C2=A0</div></b><font size=3D"1"><font face=3D"arial, helvetica, =
+sans-serif"><a href=3D"https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,=
++Waterloo,+ON+N2J+3H8&amp;entry=3Dgmail&amp;source=3Dg" style=3D"color:rgb(=
+17,85,204)" target=3D"_blank">295 Weber St N Suite 7, Waterloo, ON N2J 3H8<=
+/a></font><br><font color=3D"#444444" face=3D"arial, helvetica, sans-serif"=
+><b>PHONE</b></font><font style=3D"font-family:tahoma,sans-serif">=C2=A0</f=
+ont><div style=3D"font-family:arial,helvetica,sans-serif;display:inline"><f=
+ont color=3D"#0000ff"><a href=3D"tel:(519)%20342-0608" value=3D"+1519342060=
+8" style=3D"color:rgb(17,85,204)" target=3D"_blank">519-342-0608 x 105</a>=
+=C2=A0=C2=A0</font></div></font><font size=3D"1"><font color=3D"#444444" fa=
+ce=3D"arial, helvetica, sans-serif"><div style=3D"display:inline">|=C2=A0<b=
+>TOLL FREE=C2=A0</b></div></font></font><div style=3D"font-size:x-small;fon=
+t-family:arial,helvetica,sans-serif;color:rgb(68,68,68);display:inline">=E2=
+=80=8B</div><span style=3D"color:rgb(153,153,153);font-family:tahoma,sans-s=
+erif;font-size:x-small">1-855-MY-DOMUS (693-6687)</span></div><span style=
+=3D"font-size:12.8px"><div style=3D"font-size:small"><font size=3D"1" face=
+=3D"tahoma, sans-serif" color=3D"#666666"><div style=3D"display:inline">=E2=
+=80=8B=E2=80=8B</div></font><font color=3D"#666666"><b style=3D"font-size:x=
+-small"><font size=3D"1" face=3D"arial, helvetica, sans-serif"><a href=3D"h=
+ttps://u5472051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4Qxjz6=
+0wEYOudWzapyImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BKtM7SS=
+zbIIGaO642ZNfT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-2FHt-=
+2FUvoo907fyf-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0NM61E=
+BZYTvhU3Y2U8wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D" style=
+=3D"color:rgb(17,85,204)" target=3D"_blank">WWW.DOMUSHOUSING.COM</a></font>=
+</b><font size=3D"1" style=3D"color:rgb(34,34,34)"><a value=3D"+15193420608=
+" style=3D"color:rgb(17,85,204)"><br></a></font></font></div><div style=3D"=
+font-size:small"><br></div></span></div><div><div></div></div></div></div><=
+/div></div></div></div></div></div></div></div></div></div></div></div></di=
+v></div></div>
+<br></span><div><div class=3D"m_-4142265980933361382m_-7748926155366004177m=
+_-2267042601411398490m_-637604312774058929m_4932129062237346860h5"><div cla=
+ss=3D"gmail_quote">On Tue, Mar 13, 2018 at 10:19 AM, Khan Huang <span dir=
+=3D"ltr">&lt;<a href=3D"mailto:huang.khan74@gmail.com" target=3D"_blank">hu=
+ang.khan74@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex=
+"><div dir=3D"ltr">Hello Katherine,<div><br></div><div>Have you attempted t=
+he rent collection again yet? My bank account shows there was no withdrawal=
+.</div><div>Please let me know, thanks.</div><div><br></div><div>Best Regar=
+ds,</div><div>Kangze</div></div><div class=3D"m_-4142265980933361382m_-7748=
+926155366004177m_-2267042601411398490m_-637604312774058929m_493212906223734=
+6860m_-7499116406490468431HOEnZb"><div class=3D"m_-4142265980933361382m_-77=
+48926155366004177m_-2267042601411398490m_-637604312774058929m_4932129062237=
+346860m_-7499116406490468431h5"><div class=3D"gmail_extra"><br><div class=
+=3D"gmail_quote">On Mon, Feb 12, 2018 at 2:17 PM, Khan Huang <span dir=3D"l=
+tr">&lt;<a href=3D"mailto:huang.khan74@gmail.com" target=3D"_blank">huang.k=
+han74@gmail.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" =
+style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><di=
+v dir=3D"auto">Hello Katherine,<div dir=3D"auto"><br></div><div dir=3D"auto=
+">Thanks for the notice. I think my eTransfer into my bank was a day late b=
+ut there funds are there. Are you able up attempt it again?</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Is there an alternative way to pay su=
+ch as eTransfer?</div><div dir=3D"auto"><br></div><div dir=3D"auto">Thanks,=
+</div><div dir=3D"auto">Khan</div></div><div class=3D"m_-414226598093336138=
+2m_-7748926155366004177m_-2267042601411398490m_-637604312774058929m_4932129=
+062237346860m_-7499116406490468431m_-7936671683390317434HOEnZb"><div class=
+=3D"m_-4142265980933361382m_-7748926155366004177m_-2267042601411398490m_-63=
+7604312774058929m_4932129062237346860m_-7499116406490468431m_-7936671683390=
+317434h5"><div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Feb =
+12, 2018 1:58 PM, &quot;Katherine Hodge&quot; &lt;<a href=3D"mailto:domusre=
+ntpayments@gmail.com" target=3D"_blank">domusrentpayments@gmail.com</a>&gt;=
+ wrote:<br type=3D"attribution"><blockquote class=3D"gmail_quote" style=3D"=
+margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"=
+ltr"><div style=3D"font-family:arial,helvetica,sans-serif">Dear Kangze,</di=
+v><div style=3D"font-family:arial,helvetica,sans-serif"><br></div><div styl=
+e=3D"font-family:arial,helvetica,sans-serif">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)">Our records indicate your rent payment for Feb=
+ruary 2018, has bounced
+and we have not yet received your replacement payment. <span></span></span>=
+</p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)"><span>=C2=A0</span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)">Please contact Domus Student Housing as soon a=
+s possible and arrange to
+submit your rent payment and the $25.00 NSF fee as per your lease, by
+delivering it to our office. Payment can be made via, debit, certified cheq=
+ue,
+credit or money order. <span></span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)"><span>=C2=A0</span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><b><span lang=3D"EN-US" style=3D"font-family:Tahoma,=
+sans-serif;color:rgb(34,34,34)">Please Note:</span></b><span lang=3D"EN-US"=
+ style=3D"font-family:Tahoma,sans-serif;color:rgb(34,34,34)"><span></span><=
+/span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><i><span lang=3D"EN-US" style=3D"font-family:Tahoma,=
+sans-serif;color:rgb(34,34,34)">If there is no payment or communication mad=
+e to Domus Student Housing at
+<a href=3D"tel:(519)%20342-0608" value=3D"+15193420608" target=3D"_blank">5=
+19-342-0608 ext 105</a> or email at <a href=3D"mailto:rentpayments@domushou=
+sing.com" target=3D"_blank">rentpayments@domushousing.com</a>. We will proc=
+eed
+with legal action and will issue an N4 Notice (Notice to Terminate Early fo=
+r
+Non-payment of Rent) <span></span></span></i></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><i><span lang=3D"EN-US" style=3D"font-family:Tahoma,=
+sans-serif;color:rgb(34,34,34)"><span>=C2=A0</span></span></i></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)">Thank you for your immediate attention. If you=
+ have any questions or
+concerns, please feel free to contact me.<span></span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)"><span>=C2=A0</span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)">If you have already arranged payment, please a=
+ccept our Thanks, and
+disregard this notice. <span></span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)"><span>=C2=A0</span></span></p>
+
+<p class=3D"MsoNormal" style=3D"margin:0cm 0cm 0.0001pt;font-size:12pt;font=
+-family:Cambria,serif"><span lang=3D"EN-US" style=3D"font-family:Tahoma,san=
+s-serif;color:rgb(34,34,34)">Sincerely, <span></span></span></p>
+
+
+
+
+
+<br></div><div><div class=3D"m_-4142265980933361382m_-7748926155366004177m_=
+-2267042601411398490m_-637604312774058929m_4932129062237346860m_-7499116406=
+490468431m_-7936671683390317434m_-319308493741014993m_-8004592082394690318g=
+mail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div cl=
+ass=3D"m_-4142265980933361382m_-7748926155366004177m_-2267042601411398490m_=
+-637604312774058929m_4932129062237346860m_-7499116406490468431m_-7936671683=
+390317434m_-319308493741014993m_-8004592082394690318gmail_signature" data-s=
+martmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"=
+ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><d=
+iv dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div><div><font color=3D"#999999" face=3D"arial, =
+helvetica, sans-serif" size=3D"2">Katherine Hodge</font></div><div style=3D=
+"font-size:small"><font size=3D"1" color=3D"#666666"><div style=3D"font-fam=
+ily:arial,helvetica,sans-serif;color:rgb(68,68,68);display:inline">COLLECTI=
+ONS=C2=A0&amp; DISPUTE RESOLUTION SUPERVISOR</div></font><br><b><font color=
+=3D"#cc0000" face=3D"arial, helvetica, sans-serif">Domus Student Housing In=
+c.</font></b><font color=3D"#cc0000"><b><br></b></font></div><div style=3D"=
+font-size:small"><b style=3D"color:rgb(68,68,68);font-family:arial,helvetic=
+a,sans-serif;font-size:x-small"><div style=3D"display:inline">HEAD OFFICE=
+=C2=A0</div></b><font size=3D"1"><font face=3D"arial, helvetica, sans-serif=
+"><a href=3D"https://maps.google.com/?q=3D295+Weber+St+N+Suite+7,+Waterloo,=
++ON+N2J+3H8&amp;entry=3Dgmail&amp;source=3Dg" style=3D"color:rgb(17,85,204)=
+" target=3D"_blank">295 Weber St N Suite 7, Waterloo, ON N2J 3H8</a></font>=
+<br><font color=3D"#444444" face=3D"arial, helvetica, sans-serif"><b>PHONE<=
+/b></font><font style=3D"font-family:tahoma,sans-serif">=C2=A0</font><div s=
+tyle=3D"font-family:arial,helvetica,sans-serif;display:inline"><font color=
+=3D"#0000ff"><a href=3D"tel:(519)%20342-0608" value=3D"+15193420608" style=
+=3D"color:rgb(17,85,204)" target=3D"_blank">519-342-0608 x 105</a>=C2=A0=C2=
+=A0</font></div></font><font size=3D"1"><font color=3D"#444444" face=3D"ari=
+al, helvetica, sans-serif"><div style=3D"display:inline">|=C2=A0<b>TOLL FRE=
+E=C2=A0</b></div></font></font><div style=3D"font-size:x-small;font-family:=
+arial,helvetica,sans-serif;color:rgb(68,68,68);display:inline">=E2=80=8B</d=
+iv><span style=3D"color:rgb(153,153,153);font-family:tahoma,sans-serif;font=
+-size:x-small">1-855-MY-DOMUS (693-6687)</span></div><span style=3D"font-si=
+ze:12.8px"><div style=3D"font-size:small"><font size=3D"1" face=3D"tahoma, =
+sans-serif" color=3D"#666666"><div style=3D"display:inline">=E2=80=8B=E2=80=
+=8B</div></font><font color=3D"#666666"><b style=3D"font-size:x-small"><fon=
+t size=3D"1" face=3D"arial, helvetica, sans-serif"><a href=3D"https://u5472=
+051.ct.sendgrid.net/wf/click?upn=3DGMAWT8X-2FRMX6GokgZryE4Qxjz60wEYOudWzapy=
+ImF99jZPdejAsrvOs5LDcIKqXC_B6tQeeBwNmcFTEqK9nXGMxVjFqS-2BKtM7SSzbIIGaO642ZN=
+fT6EHVA7lmt2g8OKTRd-2B69TsR2YtIcVCPgsNqXgnk9EyPaebfo25Jpn-2FHt-2FUvoo907fyf=
+-2Bp8Zfsn-2Bt0OGW-2BfMR9ovhSC95ujAqwYkSSz8oI17q7URDMYjEDp0NM61EBZYTvhU3Y2U8=
+wak4yvn89KpSyeOTpLG3fOBhWazpn2F4TIYOPQvHc2fzsZi7q7Y-3D" style=3D"color:rgb(=
+17,85,204)" target=3D"_blank">WWW.DOMUSHOUSING.COM</a></font></b><font size=
+=3D"1" style=3D"color:rgb(34,34,34)"><a value=3D"+15193420608" style=3D"col=
+or:rgb(17,85,204)"><br></a></font></font></div><div style=3D"font-size:smal=
+l"><br></div></span></div><div><div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+</blockquote></div></div>
+</div></div></blockquote></div><br></div>
+</div></div></blockquote></div><br></div></div></div>
+</blockquote></div><br></div></div></div>
+</blockquote></div><br></div>
+</div></div></blockquote></div><br></div>
+</blockquote></div>
+</div></div></blockquote></div><br></div>
+</div></div>
+
+--0000000000002ade0b057094bc52--
